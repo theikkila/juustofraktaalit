@@ -4,7 +4,7 @@
 
 ## Aihe
 
-Fraktaaligeneraattori jossa on renderöintiä varten usean prosessorin tuki.
+Fraktaaligeneraattori jossa on renderöintiä varten monisäikeistystuki.
 
 ## Käyttäjät
 
