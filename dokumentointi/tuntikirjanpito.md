@@ -9,7 +9,12 @@
 
 ## Viikko 2
 
---
+| PVM   | Käytetyt tunnit | Työn kohde                                                  |
+|-------|-----------------|-------------------------------------------------------------|
+| 6.11. | 0.1             | PITin ja Coberturan configurointi                           |
+| 6.11. | 1               | Luokkarakenteen suunnittelu ja kaavion tekeminen            |
+| 6.11. | 0.9             | Pakettien ja luokkien luominen                              |
+| 6.11. | 1               | Alustavien testien kirjoittaminen ja luokkien refaktorointi |
 
 ## Viikko 3
 
