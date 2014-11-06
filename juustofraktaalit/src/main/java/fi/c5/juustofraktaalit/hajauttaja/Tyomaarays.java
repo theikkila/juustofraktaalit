@@ -9,7 +9,7 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 
 /**
  *
- * @author sienikasvusto
+ * @author Teemu Heikkilä
  */
 public class Tyomaarays extends Tyo{
     private int hajautus;
