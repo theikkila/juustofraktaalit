@@ -37,6 +37,16 @@ public class AlueTest {
         Alue<Integer> d = new Alue(4, 2, 2, 1);
         Assert.assertTrue(c.equals(d));
     }
-   
+    @Test
+    public void testHashCode() {
+        Alue<Integer> a = new Alue(4, 2, 6, 8);
+        Assert.assertTrue(a.hashCode() == 37194611);
+        
+        Alue<Integer> b = new Alue(1, 2, 3, 4);
+        Assert.assertTrue(b.hashCode() == 36568027);
+        
+        Alue<Double> c = new Alue(0.33, 0.44, 0.01, 42.2);
+        Assert.assertTrue(c.hashCode() == 893449673);
+    }
     
 }

@@ -13,6 +13,10 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
  */
 public class Tyo {
     private final FraktaaliTyyppi fraktaali;
+
+    /**
+     * Alue-muuttujaan on tallennettuna työalue
+     */
     public Alue alue;
 
     /**
