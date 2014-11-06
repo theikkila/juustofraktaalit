@@ -16,6 +16,10 @@
 | 6.11. | 0.9             | Pakettien ja luokkien luominen                              |
 | 6.11. | 1               | Alustavien testien kirjoittaminen ja luokkien refaktorointi |
 
+
+Sivuhuomiona luokkakaavio on tällä hetkellä hieman vanhentunut refaktoroinnin vuoksi, lisäksi on hämäävää että luokkakaavio on englanniksi kun taas projekti on muuten kirjoitettu suomeksi. Asia korjataan seuraavalla viikolla.
+
+
 ## Viikko 3
 
 --
