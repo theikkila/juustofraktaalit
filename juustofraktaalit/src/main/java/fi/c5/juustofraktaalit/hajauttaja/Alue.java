@@ -65,5 +65,8 @@ public class Alue<T> {
         }
         return true;
     }
-
+    @Override
+    public String toString() {
+        return new String("Alue: ("+this.x1+", "+this.y1+") - ("+this.x2+", "+this.y2+")");
+    }
 }
