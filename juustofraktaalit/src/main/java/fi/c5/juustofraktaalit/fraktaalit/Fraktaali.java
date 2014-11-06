@@ -9,6 +9,6 @@ package fi.c5.juustofraktaalit.fraktaalit;
  *
  * @author Teemu Heikkilä
  */
-public class Julia implements Fraktaali{
+public interface Fraktaali {
     
 }

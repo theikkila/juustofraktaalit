@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.c5.juustofraktaalit.fraktaalit;
+package fi.c5.juustofraktaalit.hajauttaja;
 
 /**
  *
  * @author Teemu Heikkilä
  */
-public class Julia implements Fraktaali{
+public class Tyo {
     
 }

@@ -9,6 +9,6 @@ package fi.c5.juustofraktaalit.fraktaalit;
  *
  * @author Teemu Heikkilä
  */
-public class Mandelbrot {
+public class Mandelbrot implements Fraktaali{
     
 }
