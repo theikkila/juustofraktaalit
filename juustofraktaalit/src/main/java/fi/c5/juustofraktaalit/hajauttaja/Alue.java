@@ -8,18 +8,34 @@ package fi.c5.juustofraktaalit.hajauttaja;
 import java.util.Objects;
 
 /**
- *
+ * Alue on neliskulmainen alue johon on tallennettu vasemman yläkulman ja oikean alakulman koordinaatit
  * @author Teemu Heikkilä
  * @param <T> Alueen koordinaattien tyyppi
  */
 public class Alue<T> {
+
+    /**
+     * vasemman yläkulman x-koordinaatti
+     */
     public T x1;
+
+    /**
+     * oikean alakulman x-koordinaatti
+     */
     public T x2;
+
+    /**
+     * vasemman yläkulman y-koordinaatti
+     */
     public T y1;
+
+    /**
+     * oikean alakulman y-koordinaatti
+     */
     public T y2;
 
     /**
-     *
+     * Alueen konstruktori, ottaa parametreinä alueen vasemman yläkulman ja oikean alakulman koordinaatit
      * @param x1 vasemman yläkulman x-koordinaatti
      * @param y1 vasemman yläkulman y-koordinaatti
      * @param x2 oikean alakulman x-koordinaatti
@@ -67,6 +83,6 @@ public class Alue<T> {
     }
     @Override
     public String toString() {
-        return new String("Alue: ("+this.x1+", "+this.y1+") - ("+this.x2+", "+this.y2+")");
+        return "Alue: ("+this.x1+", "+this.y1+") - ("+this.x2+", "+this.y2+")";
     }
 }
