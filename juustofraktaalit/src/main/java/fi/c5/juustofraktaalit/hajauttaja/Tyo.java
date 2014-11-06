@@ -18,7 +18,7 @@ public class Tyo {
     /**
      *
      * @param fraktaali Mitä fraktaalia käytetään 
-     * @param alue
+     * @param alue Työalue
      */
     public Tyo(FraktaaliTyyppi fraktaali, Alue<Double> alue) {
         this.fraktaali = fraktaali;

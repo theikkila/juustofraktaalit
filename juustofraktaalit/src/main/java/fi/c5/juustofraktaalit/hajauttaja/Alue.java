@@ -5,6 +5,8 @@
  */
 package fi.c5.juustofraktaalit.hajauttaja;
 
+import java.util.Objects;
+
 /**
  *
  * @author Teemu Heikkilä
@@ -29,4 +31,39 @@ public class Alue<T> {
         this.x2 = x2;
         this.y2 = y2;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.x1);
+        hash = 59 * hash + Objects.hashCode(this.x2);
+        hash = 59 * hash + Objects.hashCode(this.y1);
+        hash = 59 * hash + Objects.hashCode(this.y2);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alue<?> other = (Alue<?>) obj;
+        if (!Objects.equals(this.x1, other.x1)) {
+            return false;
+        }
+        if (!Objects.equals(this.x2, other.x2)) {
+            return false;
+        }
+        if (!Objects.equals(this.y1, other.y1)) {
+            return false;
+        }
+        if (!Objects.equals(this.y2, other.y2)) {
+            return false;
+        }
+        return true;
+    }
+
 }
