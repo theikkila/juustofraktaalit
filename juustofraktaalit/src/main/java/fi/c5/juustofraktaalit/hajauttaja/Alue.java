@@ -47,6 +47,16 @@ public class Alue<T> {
         this.x2 = x2;
         this.y2 = y2;
     }
+    
+    /**
+     * Konstruktori joka alustaa alueen alkamaan origosta
+     * @param leveys
+     * @param korkeus
+     */
+    public Alue(T leveys, T korkeus) {
+        this.x2 = leveys;
+        this.y2 = korkeus;
+    }
 
     @Override
     public int hashCode() {

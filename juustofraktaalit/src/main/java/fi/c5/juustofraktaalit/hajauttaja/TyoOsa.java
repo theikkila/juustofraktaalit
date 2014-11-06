@@ -5,10 +5,15 @@
  */
 package fi.c5.juustofraktaalit.hajauttaja;
 
+import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
+
 /**
  *
  * @author Teemu Heikkilä
  */
-public class TyonOsa {
-    
+public class TyoOsa extends Tyo{
+
+    public TyoOsa(FraktaaliTyyppi fraktaali, Alue<Double> alue) {
+        super(fraktaali, alue);
+    }
 }

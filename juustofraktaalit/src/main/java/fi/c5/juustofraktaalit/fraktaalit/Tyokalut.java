@@ -5,13 +5,15 @@
  */
 package fi.c5.juustofraktaalit.fraktaalit;
 
-import fi.c5.juustofraktaalit.hajauttaja.Alue;
-
 /**
  *
  * @author Teemu Heikkilä
  */
-public interface Fraktaali {
-    public void asetaAlueet(Alue<Double> alue, Alue<Integer> kuvapinta);
-    public int laskeVari(long x, long y);
+public class Tyokalut {
+    	public static int rgb(int r, int g, int b) {
+		r = Math.min(255, Math.max(r, 0));
+		g = Math.min(255, Math.max(g, 0));
+		b = Math.min(255, Math.max(b, 0));
+		return (r << 16) | (g << 8) | b;
+	}
 }

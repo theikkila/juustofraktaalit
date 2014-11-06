@@ -11,10 +11,10 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
  *
  * @author Teemu Heikkilä
  */
-public class Tyomaarays extends Tyo{
+public class TyoMaarays extends Tyo{
     private int hajautus;
 
-    public Tyomaarays(FraktaaliTyyppi fraktaali, Alue<Double> alue) {
+    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue<Double> alue) {
         super(fraktaali, alue);
     }
 
@@ -24,7 +24,7 @@ public class Tyomaarays extends Tyo{
      * @param alue
      * @param hajautus
      */
-    public Tyomaarays(FraktaaliTyyppi fraktaali, Alue<Double> alue, int hajautus) {
+    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue<Double> alue, int hajautus) {
         super(fraktaali, alue);
         this.hajautus = hajautus;
     }

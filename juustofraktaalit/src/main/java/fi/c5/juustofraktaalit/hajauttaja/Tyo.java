@@ -11,7 +11,7 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
  *
  * @author Teemu Heikkilä
  */
-public class Tyo {
+public abstract class Tyo {
     private final FraktaaliTyyppi fraktaali;
 
     /**
