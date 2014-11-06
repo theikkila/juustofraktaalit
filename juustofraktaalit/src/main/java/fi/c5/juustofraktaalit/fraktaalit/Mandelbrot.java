@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.c5.juustofraktaalit;
+package fi.c5.juustofraktaalit.fraktaalit;
 
 /**
  *
  * @author Teemu Heikkilä
  */
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Juustofraktaalit - pääohjelma");
-    }
+public class Mandelbrot {
+    
 }
