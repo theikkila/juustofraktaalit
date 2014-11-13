@@ -87,6 +87,17 @@ public class Alue {
         this.x2 = leveys;
         this.y2 = korkeus;
     }
+     /**
+     * Konstruktori joka alustaa alueen alkamaan origosta (int)
+     * @param leveys
+     * @param korkeus
+     */
+    public Alue(int leveys, int korkeus) {
+        this.x1 = new BigDecimal(0);
+        this.y1 = new BigDecimal(0);
+        this.x2 = new BigDecimal(leveys);
+        this.y2 = new BigDecimal(korkeus);
+    }
 
     @Override
     public int hashCode() {

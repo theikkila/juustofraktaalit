@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  */
 public class Hajauttaja {
     private final TyoMaarays tyo;
-    private TyoOsa[] osat;
+    public TyoOsa[] osat;
     public Hajauttaja (TyoMaarays fraktaalityo) {
         this.tyo = fraktaalityo;
     }
@@ -26,8 +26,8 @@ public class Hajauttaja {
         int tyomaara = hajautus * hajautus; // Työ pilkotaan osiin ja osien lukumäärä on hajautus^2
         // Alustetaan taulukko työn osille
         this.osat = new TyoOsa[tyomaara];
-        BigDecimal leveys = this.tyo.alue.haeLeveys();
-        BigDecimal korkeus = this.tyo.alue.haeKorkeus();
+        BigDecimal leveys = this.tyo.alue.haeLeveys().divide(new BigDecimal(hajautus));
+        BigDecimal korkeus = this.tyo.alue.haeKorkeus().divide(new BigDecimal(hajautus));
         for (int i = 0; i < tyomaara; i++) {
             int x = i % hajautus;
             int y = i / hajautus;
