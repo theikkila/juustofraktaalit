@@ -10,18 +10,29 @@ import fi.c5.juustofraktaalit.hajauttaja.Alue;
 import fi.c5.juustofraktaalit.hajauttaja.Hajauttaja;
 import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 /**
  *
  * @author Teemu Heikkilä
  */
 public class Main {
+
     public static void main(String[] args) {
         System.out.println("Juustofraktaalit - pääohjelma");
-        TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 1, 1), new Kuvapinta(800, 800), 2);
+        TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 1, 1), new Kuvapinta(800, 800), 4);
         Hajauttaja h = new Hajauttaja(t);
         h.hajauta();
         h.renderoi();
+        h.kokoa();
         
+        File f = new File("img.png");
+        try {
+            ImageIO.write(t.pinta.haeKuva(), "PNG", f);
+        } catch (IOException e) {
+            System.out.println("failll");
+        }
     }
 }

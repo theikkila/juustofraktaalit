@@ -25,15 +25,24 @@ public class TyoOsa extends Tyo{
         }
         f.asetaAlueet(alue, pinta);
     }
+    
+    /**
+     * Hakee tallennetun kuvapinnan
+     * @return kuvapinta
+     */
+    public Kuvapinta haePinta() {
+        return this.pinta;
+    }
 
     @Override
     public void run() {
-        System.out.println("Työ käynnistetty!");
+        System.out.println("Työ käynnistetty! "+this.alue+" "+this.pinta);
         for (int x = 0; x < this.pinta.leveys; x++) {
             for (int y = 0; y < this.pinta.korkeus; y++) {
                 int vari = this.f.laskeVari(x, y);
                 this.pinta.asetaPikseli(x, y, vari);
             }
         }
+        System.out.println("Työ valmis! "+this.alue+" "+this.pinta);
     }
 }

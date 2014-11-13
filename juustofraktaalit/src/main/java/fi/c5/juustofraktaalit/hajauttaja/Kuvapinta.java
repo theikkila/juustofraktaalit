@@ -5,6 +5,7 @@
  */
 package fi.c5.juustofraktaalit.hajauttaja;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 /**
@@ -36,6 +37,26 @@ public class Kuvapinta {
     public void asetaPikseli(int x, int y, int vari) {
         this.kuva.setRGB(x, y, vari);
     }
+    
+    /**
+     * Asettaa kuvapinnan osan joksikin toiseksi kuvapinnaksi
+     * @param x vasemman yläkulman x-koordinaatti
+     * @param y vasemman yläkulman y-koordinaatti
+     * @param osa asetettava kuvapinta
+     */
+    public void asetaOsa(int x, int y, Kuvapinta osa){
+        Graphics g = this.kuva.getGraphics();
+        g.drawImage(osa.kuva, x, y, null);
+    }
+    
+    /**
+     * Palauttaa BufferedImage-kuvan
+     * @return kuva
+     */
+    public BufferedImage haeKuva(){
+        return this.kuva;
+    }
+    
 
     @Override
     public int hashCode() {

@@ -48,6 +48,35 @@ public class Hajauttaja {
             tyot.add(new Thread(osat1));
             tyot.get(tyot.size()-1).start();
         }
+        System.out.println("Odotetaan osien valmistumista!");
+        while(true) {
+            boolean valmis = true;
+            for (Thread t : this.tyot) {
+                valmis = valmis && !t.isAlive();
+            }
+            if (valmis) {
+                System.out.println("Kaikki osat valmiina!");
+                break;
+            }
+        }
+    }
+
+    /**
+     * Kokoaa työn osat yhdelle kuvapinnalle
+     */
+    public void kokoa(){
+        System.out.println("Kootaan kuvaa...");
+        int hajautus = this.tyo.haeHajautus();
+        int leveys = this.tyo.pinta.leveys/hajautus;
+        int korkeus = this.tyo.pinta.korkeus/hajautus;
+        for (int i = 0; i < this.osat.length; i++) {
+            System.out.println("Kootaan osaa " + i);
+            int x = (i % hajautus) * leveys;
+            int y = (i / hajautus) * korkeus;
+            System.out.println(x+":"+y);
+            this.tyo.pinta.asetaOsa(x, y, this.osat[i].haePinta());
+        }
+        System.out.println("Kokoaminen valmis!");
     }
     
     private int indeksi(int x, int y) {
