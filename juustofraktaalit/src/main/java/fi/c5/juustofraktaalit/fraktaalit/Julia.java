@@ -6,20 +6,20 @@
 package fi.c5.juustofraktaalit.fraktaalit;
 
 import fi.c5.juustofraktaalit.hajauttaja.Alue;
+import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 
 /**
  *
  * @author Teemu Heikkilä
  */
-public class Julia implements Fraktaali{
+public class Julia extends Fraktaali{
 
-    @Override
     public void asetaAlueet(Alue alue, Alue kuvapinta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int laskeVari(long x, long y) {
+    public int laskeVari(int x, int y) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     /**
@@ -29,6 +29,11 @@ public class Julia implements Fraktaali{
     @Override
     public FraktaaliTyyppi haeTyyppi() {
         return FraktaaliTyyppi.MANDELBROT;
+    }
+
+    @Override
+    public void asetaAlueet(Alue alue, Kuvapinta kuvapinta) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

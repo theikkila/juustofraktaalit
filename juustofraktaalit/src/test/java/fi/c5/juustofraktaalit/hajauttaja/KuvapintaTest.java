@@ -20,5 +20,25 @@ public class KuvapintaTest {
         assertTrue(k.leveys == 10);
         assertTrue(k.leveys == 10);
     }
+
+    @Test
+    public void testHashCode() {
+        assertEquals(new Kuvapinta(100, 100).hashCode(), new Kuvapinta(100, 100).hashCode());
+    }
+
+
+    @Test
+    public void testEquals() {
+        Kuvapinta a = new Kuvapinta(100, 100);
+        Kuvapinta b = new Kuvapinta(100, 100);
+        assertTrue(a.equals(b) && b.equals(a));
+    }
+
+    @Test
+    public void testToString() {
+        Kuvapinta k = new Kuvapinta(100, 100);
+        String teksti = k.toString();
+        assertEquals("Kuvapinta{leveys=100, korkeus=100}", teksti);
+    }
     
 }

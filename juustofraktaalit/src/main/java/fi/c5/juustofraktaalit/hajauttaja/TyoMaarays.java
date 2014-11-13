@@ -14,18 +14,19 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 public class TyoMaarays extends Tyo{
     private int hajautus;
 
-    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue) {
-        super(fraktaali, alue);
+    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue, Kuvapinta pinta) {
+        super(fraktaali, alue, pinta);
     }
 
     /**
      *
      * @param fraktaali
      * @param alue
+     * @param pinta
      * @param hajautus
      */
-    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue, int hajautus) {
-        super(fraktaali, alue);
+    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue, Kuvapinta pinta,  int hajautus) {
+        super(fraktaali, alue, pinta);
         this.hajautus = hajautus;
     }
     
@@ -43,5 +44,10 @@ public class TyoMaarays extends Tyo{
      */
     public void asetaHajautus(int hajautus){
         this.hajautus = hajautus;
+    }
+
+    @Override
+    public void run() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -6,13 +6,14 @@
 package fi.c5.juustofraktaalit.fraktaalit;
 
 import fi.c5.juustofraktaalit.hajauttaja.Alue;
+import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 
 /**
  *
  * @author Teemu Heikkilä
  */
-public interface Fraktaali {
-    public FraktaaliTyyppi haeTyyppi();
-    public void asetaAlueet(Alue alue, Alue kuvapinta);
-    public int laskeVari(long x, long y);
+public abstract class Fraktaali {
+    public abstract FraktaaliTyyppi haeTyyppi();
+    public abstract void asetaAlueet(Alue alue, Kuvapinta kuvapinta);
+    public abstract int laskeVari(int x, int y);
 }

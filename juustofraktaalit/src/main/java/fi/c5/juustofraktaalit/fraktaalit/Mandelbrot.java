@@ -6,26 +6,27 @@
 package fi.c5.juustofraktaalit.fraktaalit;
 
 import fi.c5.juustofraktaalit.hajauttaja.Alue;
+import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 
 /**
  *
  * @author Teemu Heikkilä
  */
-public class Mandelbrot implements Fraktaali{
+public class Mandelbrot extends Fraktaali{
     private int[] paletti;
-    
+    private Alue alue;
+    private Kuvapinta kuvapinta;
     public Mandelbrot() {
         this.paletti = new int[]{Tyokalut.rgb(0, 0, 0), Tyokalut.rgb(255, 255, 255)};
     }
     
-    @Override
     public void asetaAlueet(Alue alue, Alue kuvapinta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     @Override
-    public int laskeVari(long x, long y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int laskeVari(int x, int y) {
+        return Tyokalut.rgb(x, y, 0);
     }
 
     /**
@@ -42,6 +43,12 @@ public class Mandelbrot implements Fraktaali{
      */
     public void asetaVaripaletti(int[] paletti) {
         this.paletti = paletti;
+    }
+
+    @Override
+    public void asetaAlueet(Alue alue, Kuvapinta kuvapinta) {
+        this.alue = alue;
+        this.kuvapinta = kuvapinta;
     }
     
 }

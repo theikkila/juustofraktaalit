@@ -5,7 +5,11 @@
  */
 package fi.c5.juustofraktaalit;
 
+import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 import fi.c5.juustofraktaalit.hajauttaja.Alue;
+import fi.c5.juustofraktaalit.hajauttaja.Hajauttaja;
+import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
+import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
 
 /**
  *
@@ -14,5 +18,10 @@ import fi.c5.juustofraktaalit.hajauttaja.Alue;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Juustofraktaalit - pääohjelma");
+        TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 1, 1), new Kuvapinta(800, 800), 2);
+        Hajauttaja h = new Hajauttaja(t);
+        h.hajauta();
+        h.renderoi();
+        
     }
 }

@@ -12,22 +12,28 @@ import java.util.Objects;
  *
  * @author Teemu Heikkilä
  */
-public abstract class Tyo {
+public abstract class Tyo implements Runnable {
     private final FraktaaliTyyppi fraktaali;
 
     /**
      * Alue-muuttujaan on tallennettuna työalue
      */
     public Alue alue;
-
+    
+    /**
+     * Kuvapinta-muuttujaan on tallennettuna kuvapinta jolle fraktaali renderöidään
+     */
+    public Kuvapinta pinta;
     /**
      * Työn konstruktori
      * @param fraktaali Mitä fraktaalia käytetään 
      * @param alue Työalue
+     * @param pinta Kuvapinta
      */
-    public Tyo(FraktaaliTyyppi fraktaali, Alue alue) {
+    public Tyo(FraktaaliTyyppi fraktaali, Alue alue, Kuvapinta pinta) {
         this.fraktaali = fraktaali;
         this.alue = alue;
+        this.pinta = pinta;
     }
     
     /**
@@ -43,6 +49,7 @@ public abstract class Tyo {
         int hash = 7;
         hash = 97 * hash + Objects.hashCode(this.fraktaali);
         hash = 97 * hash + Objects.hashCode(this.alue);
+        hash = 97 * hash + Objects.hashCode(this.pinta);
         return hash;
     }
 
@@ -61,10 +68,16 @@ public abstract class Tyo {
         if (!Objects.equals(this.alue, other.alue)) {
             return false;
         }
+        if (!Objects.equals(this.pinta, other.pinta)) {
+            return false;
+        }
         return true;
     }
     @Override
     public String toString() {
         return "Tyo:" + this.alue;
     }
+
+    @Override
+    public abstract void run();
 }
