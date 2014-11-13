@@ -18,7 +18,7 @@ public class Hajauttaja {
     public ArrayList<Thread> tyot;
     public Hajauttaja (TyoMaarays fraktaalityo) {
         this.tyo = fraktaalityo;
-        this.tyot = new ArrayList<Thread>();
+        this.tyot = new ArrayList<>();
     }
 
     /**
