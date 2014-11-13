@@ -69,6 +69,7 @@ public class Hajauttaja {
         int hajautus = this.tyo.haeHajautus();
         int leveys = this.tyo.pinta.leveys/hajautus;
         int korkeus = this.tyo.pinta.korkeus/hajautus;
+        
         for (int i = 0; i < this.osat.length; i++) {
             System.out.println("Kootaan osaa " + i);
             int x = (i % hajautus) * leveys;

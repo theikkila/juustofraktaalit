@@ -22,7 +22,11 @@ Sivuhuomiona luokkakaavio on tällä hetkellä hieman vanhentunut refaktoroinnin
 
 ## Viikko 3
 
---
+| PVM    | Käytetyt tunnit | Työn kohde                                                  |
+|--------|-----------------|-------------------------------------------------------------|
+| 13.11. | 1               | Luokkien ja testien kirjoittaminen                          |
+| 13.11. | 1               | Logiikan (säikeistäminen ja töiden jako) kirjoittaminen     |
+| 13.11. | 1               | Refaktorointi                                               |
 
 ## Viikko 4
 
