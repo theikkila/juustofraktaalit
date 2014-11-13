@@ -13,7 +13,7 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
  */
 public class TyoOsa extends Tyo{
 
-    public TyoOsa(FraktaaliTyyppi fraktaali, Alue<Double> alue) {
+    public TyoOsa(FraktaaliTyyppi fraktaali, Alue alue) {
         super(fraktaali, alue);
     }
 }

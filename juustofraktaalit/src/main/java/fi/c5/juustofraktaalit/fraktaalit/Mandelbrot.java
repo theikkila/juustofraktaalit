@@ -19,7 +19,7 @@ public class Mandelbrot implements Fraktaali{
     }
     
     @Override
-    public void asetaAlueet(Alue<Double> alue, Alue<Integer> kuvapinta) {
+    public void asetaAlueet(Alue alue, Alue kuvapinta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
@@ -27,7 +27,15 @@ public class Mandelbrot implements Fraktaali{
     public int laskeVari(long x, long y) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    /**
+     * Palauttaa fraktaalin tyypin
+     * @return fraktaalin tyyppi
+     */
+    @Override
+    public FraktaaliTyyppi haeTyyppi() {
+        return FraktaaliTyyppi.MANDELBROT;
+    }
     /**
      * Asettaa fraktaalin piirtoon tarvittavan väripaletin
      * @param paletti

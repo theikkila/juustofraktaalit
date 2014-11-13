@@ -5,11 +5,11 @@
  */
 package fi.c5.juustofraktaalit.hajauttaja;
 
-import org.junit.AfterClass;
+import java.math.BigDecimal;
+
 import org.junit.Assert;
-import org.junit.BeforeClass;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -19,34 +19,38 @@ public class AlueTest {
     
     @Test
     public void testLuoAlue() {
-        Alue<Double> a = new Alue(1., 2., 10., 20.);
+        Alue a = new Alue(new BigDecimal(1.), new BigDecimal(2.0), new BigDecimal(10.0), new BigDecimal(20.0));
         Assert.assertNotNull(a);
-        Assert.assertTrue(1. == a.x1);
-        Assert.assertTrue(2. == a.y1);
-        Assert.assertTrue(10. == a.x2);
-        Assert.assertTrue(20. == 20.);
+        
+        Assert.assertTrue(new BigDecimal(1.).equals(a.x1));
+        Assert.assertTrue(new BigDecimal(2.).equals(a.y1));
+        Assert.assertTrue(new BigDecimal(10.).equals(a.x2));
+        Assert.assertTrue(new BigDecimal(20.).equals(a.y2));
     }
     
     @Test
     public void testEquals() {
-        Alue<Integer> a = new Alue(0, 0, 0, 0);
-        Alue<Integer> b = new Alue(0, 0, 0, 0);
-        Assert.assertTrue(a.equals(b));
+        Alue a = new Alue(0., 0., 0., 0.);
+        Alue b = new Alue(0., 0., 0., 0.);
+        Assert.assertTrue(a.equals(b) && b.equals(a));
         
-        Alue<Integer> c = new Alue(4, 2, 2, 1);
-        Alue<Integer> d = new Alue(4, 2, 2, 1);
-        Assert.assertTrue(c.equals(d));
+        Alue c = new Alue(4., 2., 2., 1.);
+        Alue d = new Alue(4., 2., 2., 1.);
+        Assert.assertTrue(c.equals(d) && d.equals(c));
     }
     @Test
     public void testHashCode() {
-        Alue<Integer> a = new Alue(4, 2, 6, 8);
-        Assert.assertTrue(a.hashCode() == 37194611);
+        Alue a = new Alue(4, 2, 6, 8);
+        Alue b = new Alue(4., 2.0, 6.0, 8.0);
+        Assert.assertTrue(a.hashCode() == b.hashCode());
         
-        Alue<Integer> b = new Alue(1, 2, 3, 4);
-        Assert.assertTrue(b.hashCode() == 36568027);
+        Alue c = new Alue(1, 2, 3, 4);
+        Alue d = new Alue(new BigDecimal(1), new BigDecimal(2), new BigDecimal(3), new BigDecimal(4));
+        Assert.assertTrue(c.hashCode() == d.hashCode());
         
-        Alue<Double> c = new Alue(0.33, 0.44, 0.01, 42.2);
-        Assert.assertTrue(c.hashCode() == 893449673);
+        Alue e = new Alue(0.33, 0.44, 0.01, 42.2);
+        Alue f = new Alue(0.33, 0.44, 0.01, 42.2);
+        Assert.assertTrue(e.hashCode() == f.hashCode());
     }
     
 }

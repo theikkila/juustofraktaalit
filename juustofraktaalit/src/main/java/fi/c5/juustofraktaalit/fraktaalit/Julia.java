@@ -14,13 +14,21 @@ import fi.c5.juustofraktaalit.hajauttaja.Alue;
 public class Julia implements Fraktaali{
 
     @Override
-    public void asetaAlueet(Alue<Double> alue, Alue<Integer> kuvapinta) {
+    public void asetaAlueet(Alue alue, Alue kuvapinta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int laskeVari(long x, long y) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    /**
+     * Palauttaa fraktaalin tyypin
+     * @return fraktaalin tyyppi
+     */
+    @Override
+    public FraktaaliTyyppi haeTyyppi() {
+        return FraktaaliTyyppi.MANDELBROT;
     }
     
 }

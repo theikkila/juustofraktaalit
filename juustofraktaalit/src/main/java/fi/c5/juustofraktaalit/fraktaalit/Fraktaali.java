@@ -12,6 +12,7 @@ import fi.c5.juustofraktaalit.hajauttaja.Alue;
  * @author Teemu Heikkilä
  */
 public interface Fraktaali {
-    public void asetaAlueet(Alue<Double> alue, Alue<Integer> kuvapinta);
+    public FraktaaliTyyppi haeTyyppi();
+    public void asetaAlueet(Alue alue, Alue kuvapinta);
     public int laskeVari(long x, long y);
 }

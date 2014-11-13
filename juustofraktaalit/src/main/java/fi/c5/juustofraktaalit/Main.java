@@ -5,6 +5,8 @@
  */
 package fi.c5.juustofraktaalit;
 
+import fi.c5.juustofraktaalit.hajauttaja.Alue;
+
 /**
  *
  * @author Teemu Heikkilä

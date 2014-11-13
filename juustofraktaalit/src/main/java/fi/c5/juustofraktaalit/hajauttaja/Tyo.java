@@ -20,12 +20,20 @@ public abstract class Tyo {
     public Alue alue;
 
     /**
-     *
+     * Työn konstruktori
      * @param fraktaali Mitä fraktaalia käytetään 
      * @param alue Työalue
      */
-    public Tyo(FraktaaliTyyppi fraktaali, Alue<Double> alue) {
+    public Tyo(FraktaaliTyyppi fraktaali, Alue alue) {
         this.fraktaali = fraktaali;
         this.alue = alue;
+    }
+    
+    /**
+     * Palauttaa työn fraktaalityypin
+     * @return fraktaalityyppi
+     */
+    public FraktaaliTyyppi haeTyyppi () {
+        return this.fraktaali;
     }
 }

@@ -14,7 +14,7 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 public class TyoMaarays extends Tyo{
     private int hajautus;
 
-    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue<Double> alue) {
+    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue) {
         super(fraktaali, alue);
     }
 
@@ -24,9 +24,24 @@ public class TyoMaarays extends Tyo{
      * @param alue
      * @param hajautus
      */
-    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue<Double> alue, int hajautus) {
+    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue, int hajautus) {
         super(fraktaali, alue);
         this.hajautus = hajautus;
     }
     
+    /**
+     * hajautus oliomuuttujan getteri
+     * @return hajautus
+     */
+    public int haeHajautus(){
+        return this.hajautus;
+    }
+    
+    /**
+     * hajautus oliomuuttujan setteri
+     * @param hajautus Kertoo kuinka moneen osaan työ hajautetaan
+     */
+    public void asetaHajautus(int hajautus){
+        this.hajautus = hajautus;
+    }
 }
