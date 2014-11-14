@@ -22,7 +22,9 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Juustofraktaalit - pääohjelma");
-        TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 1, 1), new Kuvapinta(800, 800), 4);
+        // Muista käännetty Y-koordinaatti!!!!
+        TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, null, new Kuvapinta(3000, 2000), 2);
+        t.asetaAlue(-1.0, 0.0, 1.5);
         Hajauttaja h = new Hajauttaja(t);
         h.hajauta();
         h.renderoi();

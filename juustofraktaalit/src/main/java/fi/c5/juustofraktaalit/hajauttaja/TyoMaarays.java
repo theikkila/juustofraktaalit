@@ -16,6 +16,7 @@ public class TyoMaarays extends Tyo{
 
     public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue, Kuvapinta pinta) {
         super(fraktaali, alue, pinta);
+        hajautus = 1;
     }
 
     /**
@@ -28,6 +29,15 @@ public class TyoMaarays extends Tyo{
     public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue, Kuvapinta pinta,  int hajautus) {
         super(fraktaali, alue, pinta);
         this.hajautus = hajautus;
+    }
+    public void asetaAlue(double x, double y, double zoom) {
+        Double zoom_x = zoom * ((double)this.pinta.leveys / (double)this.pinta.korkeus);
+        Double x1 = x-zoom_x;
+        Double y1 = y-zoom;
+        Double x2 = x+zoom_x;
+        Double y2 = y+zoom;
+        Alue a = new Alue(x1, y1, x2, y2);
+        this.alue = a;
     }
     
     /**

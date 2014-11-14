@@ -19,13 +19,13 @@ public class AlueTest {
     
     @Test
     public void testLuoAlue() {
-        Alue a = new Alue(new BigDecimal(1.), new BigDecimal(2.0), new BigDecimal(10.0), new BigDecimal(20.0));
+        Alue a = new Alue(1., 2.0, 10.0, 20.0);
         Assert.assertNotNull(a);
         
-        Assert.assertTrue(new BigDecimal(1.).equals(a.x1));
-        Assert.assertTrue(new BigDecimal(2.).equals(a.y1));
-        Assert.assertTrue(new BigDecimal(10.).equals(a.x2));
-        Assert.assertTrue(new BigDecimal(20.).equals(a.y2));
+        Assert.assertTrue(1. == a.x1);
+        Assert.assertTrue(2. == a.y1);
+        Assert.assertTrue(10. == a.x2);
+        Assert.assertTrue(20. == a.y2);
     }
     
     @Test
@@ -44,13 +44,40 @@ public class AlueTest {
         Alue b = new Alue(4., 2.0, 6.0, 8.0);
         Assert.assertTrue(a.hashCode() == b.hashCode());
         
-        Alue c = new Alue(1, 2, 3, 4);
-        Alue d = new Alue(new BigDecimal(1), new BigDecimal(2), new BigDecimal(3), new BigDecimal(4));
-        Assert.assertTrue(c.hashCode() == d.hashCode());
-        
         Alue e = new Alue(0.33, 0.44, 0.01, 42.2);
         Alue f = new Alue(0.33, 0.44, 0.01, 42.2);
         Assert.assertTrue(e.hashCode() == f.hashCode());
+    }
+    @Test
+    public void testhaeLeveys() {
+        Alue a = new Alue(0, 0, 6, 6);
+        Assert.assertTrue(a.haeLeveys() == 6.0);
+        
+        Alue b = new Alue(0, 0, 6, 8);
+        Assert.assertTrue(b.haeLeveys() == 6.0);
+        
+        Alue c = new Alue(-3, 0, 3, 6);
+        Assert.assertTrue(c.haeLeveys() == 6.0);
+        
+        Alue d = new Alue(-1., 0., 4., 6.);
+        Assert.assertTrue(d.haeLeveys() == 5.0);
+        
+    }
+    
+    @Test
+    public void testhaeKorkeus() {
+        Alue a = new Alue(0, 0, 6, 6);
+        Assert.assertTrue(a.haeKorkeus() == 6.0);
+        
+        Alue b = new Alue(0, 0, 4, 8);
+        Assert.assertTrue(b.haeKorkeus() == 8.0);
+        
+        Alue c = new Alue(-3, -3, 3, 3);
+        Assert.assertTrue(c.haeLeveys() == 6.0);
+        
+        Alue d = new Alue(-1., -1., 4., 4.);
+        Assert.assertTrue(d.haeLeveys() == 5.0);
+        
     }
     
 }

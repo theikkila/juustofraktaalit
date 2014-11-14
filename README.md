@@ -13,3 +13,13 @@ Nämä eivät ehkä näytä fraktaaleilta, eivät ne niitä olekaan, ne ovat haj
 
 ### Hajautus: 4
 ![hajautus 4](https://raw.githubusercontent.com/theikkila/juustofraktaalit/master/dokumentointi/testikuvia/img.png)
+
+
+## 14.11. aamuyö
+
+Ensimmäiset fraktaalit!!
+### Mandelbrot
+![mandelbrot](https://raw.githubusercontent.com/theikkila/juustofraktaalit/master/dokumentointi/testikuvia/fraktaali2.png)
+
+### Quad-Spiral valley
+![Quad-Spiral valley](https://raw.githubusercontent.com/theikkila/juustofraktaalit/master/dokumentointi/testikuvia/fraktaali_1.png)

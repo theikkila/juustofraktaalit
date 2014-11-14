@@ -5,7 +5,7 @@
  */
 package fi.c5.juustofraktaalit.hajauttaja;
 
-import java.math.BigDecimal;
+
 import java.util.ArrayList;
 
 /**
@@ -29,16 +29,19 @@ public class Hajauttaja {
         int tyomaara = hajautus * hajautus; // Työ pilkotaan osiin ja osien lukumäärä on hajautus^2
         // Alustetaan taulukko työn osille
         this.osat = new TyoOsa[tyomaara];
-        BigDecimal leveys = this.tyo.alue.haeLeveys().divide(new BigDecimal(hajautus));
-        BigDecimal korkeus = this.tyo.alue.haeKorkeus().divide(new BigDecimal(hajautus));
+        Double origo_x = this.tyo.alue.x1;
+        Double origo_y = this.tyo.alue.y1;
+        Double leveys = this.tyo.alue.haeLeveys()/hajautus;
+        Double korkeus = this.tyo.alue.haeKorkeus()/hajautus;
         Kuvapinta k = this.tyo.pinta;
         for (int i = 0; i < tyomaara; i++) {
-            int x = i % hajautus;
-            int y = i / hajautus;
-            BigDecimal a_x = leveys.multiply(new BigDecimal(x));
-            BigDecimal a_y = korkeus.multiply(new BigDecimal(y));
-            BigDecimal b_x = a_x.add(leveys);
-            BigDecimal b_y = a_y.add(korkeus);
+            int x = (i % hajautus);
+            int y = (i / hajautus);
+            Double a_x = leveys*x+origo_x;
+            Double a_y = korkeus*y+origo_y;
+                        System.out.println("("+a_x+","+a_y+")");
+            Double b_x = a_x+leveys;
+            Double b_y = a_y+korkeus;
             osat[i] = new TyoOsa(this.tyo.haeTyyppi(), new Alue(a_x, a_y, b_x, b_y), new Kuvapinta(k.leveys/hajautus, k.korkeus/hajautus));
         }
     }

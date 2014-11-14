@@ -5,7 +5,6 @@
  */
 package fi.c5.juustofraktaalit.hajauttaja;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -17,22 +16,22 @@ public class Alue {
     /**
      * vasemman yläkulman x-koordinaatti
      */
-    public BigDecimal x1;
+    public Double x1;
 
     /**
      * oikean alakulman x-koordinaatti
      */
-    public BigDecimal x2;
+    public Double x2;
 
     /**
      * vasemman yläkulman y-koordinaatti
      */
-    public BigDecimal y1;
+    public Double y1;
 
     /**
      * oikean alakulman y-koordinaatti
      */
-    public BigDecimal y2;
+    public Double y2;
 
     /**
      * Alueen konstruktori, ottaa parametreinä alueen vasemman yläkulman ja oikean alakulman koordinaatit
@@ -41,39 +40,26 @@ public class Alue {
      * @param x2 oikean alakulman x-koordinaatti
      * @param y2 oikean alakulman y-koordinaatti
      */
-    public Alue(BigDecimal x1, BigDecimal y1, BigDecimal x2, BigDecimal y2) {
+    public Alue(Double x1, Double y1, Double x2, Double y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
     }
     
-    /**
-     * Alueen double-konstruktori, ottaa parametreinään samat kuin BigDecimal-konstruktori mutta doubleina.
-     * @param x1 vas. yk. x
-     * @param y1 vas. yk. y
-     * @param x2 oik. ak. x
-     * @param y2 oik. ak. y
-     */
-    public Alue(Double x1, Double y1, Double x2, Double y2) {
-        this.x1 = new BigDecimal(x1);
-        this.y1 = new BigDecimal(y1);
-        this.x2 = new BigDecimal(x2);
-        this.y2 = new BigDecimal(y2);
-    }
     
     /**
-     * Alueen int-konstruktori, ottaa parametreinään samat kuin BigDecimal-konstruktori mutta doubleina.
+     * Alueen int-konstruktori, ottaa parametreinään samat kuin Double-konstruktori mutta doubleina.
      * @param x1 vas. yk. x
      * @param y1 vas. yk. y
      * @param x2 oik. ak. x
      * @param y2 oik. ak. y
      */
     public Alue(int x1, int y1, int x2, int y2) {
-        this.x1 = new BigDecimal(x1);
-        this.y1 = new BigDecimal(y1);
-        this.x2 = new BigDecimal(x2);
-        this.y2 = new BigDecimal(y2);
+        this.x1 = new Double(x1);
+        this.y1 = new Double(y1);
+        this.x2 = new Double(x2);
+        this.y2 = new Double(y2);
     }
     
     /**
@@ -81,9 +67,9 @@ public class Alue {
      * @param leveys
      * @param korkeus
      */
-    public Alue(BigDecimal leveys, BigDecimal korkeus) {
-        this.x1 = new BigDecimal(0);
-        this.y1 = new BigDecimal(0);
+    public Alue(Double leveys, Double korkeus) {
+        this.x1 = new Double(0);
+        this.y1 = new Double(0);
         this.x2 = leveys;
         this.y2 = korkeus;
     }
@@ -93,10 +79,10 @@ public class Alue {
      * @param korkeus
      */
     public Alue(int leveys, int korkeus) {
-        this.x1 = new BigDecimal(0);
-        this.y1 = new BigDecimal(0);
-        this.x2 = new BigDecimal(leveys);
-        this.y2 = new BigDecimal(korkeus);
+        this.x1 = new Double(0);
+        this.y1 = new Double(0);
+        this.x2 = new Double(leveys);
+        this.y2 = new Double(korkeus);
     }
 
     @Override
@@ -137,16 +123,16 @@ public class Alue {
      * Hae aleen leveys
      * @return alueen leveys
      */
-    public BigDecimal haeLeveys() {
-        return this.x2.subtract(x1);
+    public Double haeLeveys() {
+        return Math.abs(this.x2 - this.x1);
     }
     
     /**
      * Hae alueen korkeus
      * @return alueen korkeus
      */
-    public BigDecimal haeKorkeus() {
-        return this.y2.subtract(y1);
+    public Double haeKorkeus() {
+        return Math.abs(this.y2 - this.y1);
     }
     
     @Override
