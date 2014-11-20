@@ -32,7 +32,7 @@ public class Mandelbrot extends Fraktaali {
         Double x = 0.0;
         Double y = 0.0;
         int iteration = 0;
-        int max_iterations = 1000;
+        int max_iterations = 100;
         // x * x + y * y < 2 * 2 && iteration < max_iterations
         while(x*x+y*y < 4 && iteration < max_iterations) {
             // xtemp = x * x - y * y + x0;

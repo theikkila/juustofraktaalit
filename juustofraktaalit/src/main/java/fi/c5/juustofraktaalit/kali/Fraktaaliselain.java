@@ -6,6 +6,7 @@
 package fi.c5.juustofraktaalit.kali;
 
 import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
+import fi.c5.juustofraktaalit.fraktaalit.Tyokalut;
 import fi.c5.juustofraktaalit.hajauttaja.Hajauttaja;
 import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 import fi.c5.juustofraktaalit.hajauttaja.Suorittaja;
@@ -17,7 +18,10 @@ import fi.c5.juustofraktaalit.hajauttaja.TyoVaihe;
  * @author Teemu Heikkilä
  */
 public class Fraktaaliselain extends javax.swing.JFrame {
-
+    Double keskipiste_x;
+    Double keskipiste_y;
+    int zoomTaso;
+    Double zoom;
     /**
      * Creates new form Fraktaaliselain
      */
@@ -25,6 +29,11 @@ public class Fraktaaliselain extends javax.swing.JFrame {
         initComponents();
         this.tila = new Tilanne(this.tilaKentta);
         tila.asetaTila("Valmis!");
+        this.keskipiste_x = -1.0;
+        this.keskipiste_y = 0.0;
+        this.zoomTaso = 0;
+        this.zoom = 1.5;
+        paivitaLisatiedot();
     }
 
     /**
@@ -44,8 +53,13 @@ public class Fraktaaliselain extends javax.swing.JFrame {
         hajautusSlideri = new javax.swing.JSlider();
         tilaOtsikko = new javax.swing.JLabel();
         tilaKentta = new javax.swing.JTextField();
+        valitonRenderointiCheckbox = new javax.swing.JCheckBox();
         liikuteltavaPaneeli = new javax.swing.JScrollPane();
         piirtaja = new fi.c5.juustofraktaalit.kali.Piirtaja();
+        jToolBar1 = new javax.swing.JToolBar();
+        keskipisteOtsikko = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
+        zoomOtsikko = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Juustofraktaalit");
@@ -71,9 +85,9 @@ public class Fraktaaliselain extends javax.swing.JFrame {
         hajautusSlideri.setPaintTicks(true);
         hajautusSlideri.setSnapToTicks(true);
         hajautusSlideri.setValue(1);
-        hajautusSlideri.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                hajautusSlideriPropertyChange(evt);
+        hajautusSlideri.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                hajautusSlideriStateChanged(evt);
             }
         });
 
@@ -86,6 +100,11 @@ public class Fraktaaliselain extends javax.swing.JFrame {
             }
         });
 
+        valitonRenderointiCheckbox.setText("Välitön renderöinti?");
+        valitonRenderointiCheckbox.setFocusable(false);
+        valitonRenderointiCheckbox.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        valitonRenderointiCheckbox.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
         javax.swing.GroupLayout asetusPaneeliLayout = new javax.swing.GroupLayout(asetusPaneeli);
         asetusPaneeli.setLayout(asetusPaneeliLayout);
         asetusPaneeliLayout.setHorizontalGroup(
@@ -94,7 +113,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
                 .addComponent(algoritmiOtsikko)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(algoritmiValinta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(renderoiNappi, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(asetusPaneeliLayout.createSequentialGroup()
@@ -102,44 +121,75 @@ public class Fraktaaliselain extends javax.swing.JFrame {
                     .addComponent(hajautusOtsikko)
                     .addComponent(tilaOtsikko))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(hajautusSlideri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tilaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(asetusPaneeliLayout.createSequentialGroup()
+                        .addComponent(hajautusSlideri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(valitonRenderointiCheckbox, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(102, 102, 102))
+                    .addComponent(tilaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         asetusPaneeliLayout.setVerticalGroup(
             asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(asetusPaneeliLayout.createSequentialGroup()
-                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(asetusPaneeliLayout.createSequentialGroup()
-                        .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(algoritmiOtsikko)
-                            .addComponent(algoritmiValinta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hajautusOtsikko)
-                            .addComponent(hajautusSlideri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(asetusPaneeliLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(renderoiNappi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(asetusPaneeliLayout.createSequentialGroup()
+                                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(algoritmiOtsikko)
+                                    .addComponent(algoritmiValinta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(36, 36, 36)
+                                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(hajautusOtsikko)
+                                    .addComponent(hajautusSlideri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(asetusPaneeliLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(renderoiNappi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, asetusPaneeliLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(valitonRenderointiCheckbox, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)))
                 .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tilaOtsikko)
                     .addComponent(tilaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
+        piirtaja.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
+                piirtajaMouseWheelMoved(evt);
+            }
+        });
+        piirtaja.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                piirtajaMousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout piirtajaLayout = new javax.swing.GroupLayout(piirtaja);
         piirtaja.setLayout(piirtajaLayout);
         piirtajaLayout.setHorizontalGroup(
             piirtajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 644, Short.MAX_VALUE)
+            .addGap(0, 803, Short.MAX_VALUE)
         );
         piirtajaLayout.setVerticalGroup(
             piirtajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
+            .addGap(0, 437, Short.MAX_VALUE)
         );
 
         liikuteltavaPaneeli.setViewportView(piirtaja);
+
+        jToolBar1.setRollover(true);
+
+        keskipisteOtsikko.setText("keskipiste");
+        jToolBar1.add(keskipisteOtsikko);
+        jToolBar1.add(jSeparator1);
+
+        zoomOtsikko.setText("zoom");
+        jToolBar1.add(zoomOtsikko);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,51 +197,82 @@ public class Fraktaaliselain extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(asetusPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(liikuteltavaPaneeli)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(liikuteltavaPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+                .addComponent(liikuteltavaPaneeli, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(asetusPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void renderoiNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renderoiNappiActionPerformed
+    private void renderoi(){
         tila.asetaTila("Renderöinti aloitettu!");
         TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, null, new Kuvapinta(this.piirtaja.getWidth(), this.piirtaja.getHeight()), this.hajautusSlideri.getValue());
-        t.asetaAlue(-1.0, 0.0, 1.5);
+        t.asetaAlue(keskipiste_x, keskipiste_y, zoom);
         Hajauttaja h = new Hajauttaja(t);
         Suorittaja v1 = new Suorittaja(h, this.tila, t, this.piirtaja);
         v1.execute();
-        //
+        
+    }
+    private void renderoiNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renderoiNappiActionPerformed
+        renderoi();
     }//GEN-LAST:event_renderoiNappiActionPerformed
-
+    private void paivitaLisatiedot(){
+        keskipisteOtsikko.setText("Keskipiste: ("+keskipiste_x+","+keskipiste_y+")");
+        zoomOtsikko.setText("Zoom: "+ zoom);
+    }
     private void tilaKenttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilaKenttaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tilaKenttaActionPerformed
 
-    private void hajautusSlideriPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_hajautusSlideriPropertyChange
+    private void hajautusSlideriStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_hajautusSlideriStateChanged
         // TODO add your handling code here:
-        System.out.println(evt.getPropertyName());
-        if (evt.getPropertyName().equals("value")) {
-            tila.asetaTila("Hajautus asetettu arvoon " + (Integer)evt.getNewValue()+" -> Renderöitäessä luodaan " + Math.pow((Integer)evt.getNewValue(), 2)+" säiettä.");            
-        }
-    }//GEN-LAST:event_hajautusSlideriPropertyChange
+        tila.asetaTila("Hajautus asetettu arvoon " +hajautusSlideri.getValue()+" -> Renderöitäessä luodaan " + Math.pow(hajautusSlideri.getValue(), 2)+" säiettä.");            
+    }//GEN-LAST:event_hajautusSlideriStateChanged
 
+    private void piirtajaMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_piirtajaMouseWheelMoved
+        zoomTaso += Math.pow(evt.getWheelRotation(), Math.max(2, zoomTaso))*Math.signum(evt.getWheelRotation());
+        zoom = 1.0 / Math.max(zoomTaso, .5);
+        paivitaLisatiedot();
+    }//GEN-LAST:event_piirtajaMouseWheelMoved
+
+    private void piirtajaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_piirtajaMousePressed
+        // TODO add your handling code here:
+        maaritaKeskipiste(evt.getX(), evt.getY());
+        paivitaLisatiedot();
+        if (this.valitonRenderointiCheckbox.isSelected()) {
+            renderoi();
+        }
+    }//GEN-LAST:event_piirtajaMousePressed
+    private void maaritaKeskipiste(int uusiPPX, int uusiPPY) {
+        double suhdeX = (double)uusiPPX/(double)this.piirtaja.getWidth();        
+        double suhdeY = (double)uusiPPY/(double)this.piirtaja.getHeight();
+        keskipiste_x = Tyokalut.map(suhdeX, 0, 1, keskipiste_x-zoom, keskipiste_x+zoom);
+        keskipiste_y = Tyokalut.map(suhdeY, 0, 1, keskipiste_y-zoom, keskipiste_y+zoom);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel algoritmiOtsikko;
     private javax.swing.JComboBox algoritmiValinta;
     private javax.swing.JPanel asetusPaneeli;
     private javax.swing.JLabel hajautusOtsikko;
     private javax.swing.JSlider hajautusSlideri;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JLabel keskipisteOtsikko;
     private javax.swing.JScrollPane liikuteltavaPaneeli;
     private fi.c5.juustofraktaalit.kali.Piirtaja piirtaja;
     private javax.swing.JButton renderoiNappi;
     private javax.swing.JTextField tilaKentta;
     private javax.swing.JLabel tilaOtsikko;
+    private javax.swing.JCheckBox valitonRenderointiCheckbox;
+    private javax.swing.JLabel zoomOtsikko;
     // End of variables declaration//GEN-END:variables
     private Tilanne tila;
 }
