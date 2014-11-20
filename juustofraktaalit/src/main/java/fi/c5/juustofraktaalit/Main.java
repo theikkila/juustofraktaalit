@@ -10,9 +10,11 @@ import fi.c5.juustofraktaalit.hajauttaja.Alue;
 import fi.c5.juustofraktaalit.hajauttaja.Hajauttaja;
 import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
+import fi.c5.juustofraktaalit.kali.Fraktaaliselain;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -23,6 +25,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Juustofraktaalit - pääohjelma");
         // Muista käännetty Y-koordinaatti!!!!
+        /*
         TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, null, new Kuvapinta(3000, 2000), 2);
         t.asetaAlue(-1.0, 0.0, 1.5);
         Hajauttaja h = new Hajauttaja(t);
@@ -36,5 +39,11 @@ public class Main {
         } catch (IOException e) {
             System.out.println("failll");
         }
+        */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Fraktaaliselain().setVisible(true);
+            }
+        });
     }
 }
