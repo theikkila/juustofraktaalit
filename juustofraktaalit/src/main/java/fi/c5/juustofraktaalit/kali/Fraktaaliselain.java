@@ -5,6 +5,13 @@
  */
 package fi.c5.juustofraktaalit.kali;
 
+import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
+import fi.c5.juustofraktaalit.hajauttaja.Hajauttaja;
+import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
+import fi.c5.juustofraktaalit.hajauttaja.Suorittaja;
+import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
+import fi.c5.juustofraktaalit.hajauttaja.TyoVaihe;
+
 /**
  *
  * @author Teemu Heikkilä
@@ -16,6 +23,8 @@ public class Fraktaaliselain extends javax.swing.JFrame {
      */
     public Fraktaaliselain() {
         initComponents();
+        this.tila = new Tilanne(this.tilaKentta);
+        tila.asetaTila("Valmis!");
     }
 
     /**
@@ -27,142 +36,162 @@ public class Fraktaaliselain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jSlider1 = new javax.swing.JSlider();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        piirtaja2 = new fi.c5.juustofraktaalit.kali.Piirtaja();
+        asetusPaneeli = new javax.swing.JPanel();
+        algoritmiOtsikko = new javax.swing.JLabel();
+        algoritmiValinta = new javax.swing.JComboBox();
+        hajautusOtsikko = new javax.swing.JLabel();
+        renderoiNappi = new javax.swing.JButton();
+        hajautusSlideri = new javax.swing.JSlider();
+        tilaOtsikko = new javax.swing.JLabel();
+        tilaKentta = new javax.swing.JTextField();
+        liikuteltavaPaneeli = new javax.swing.JScrollPane();
+        piirtaja = new fi.c5.juustofraktaalit.kali.Piirtaja();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Juustofraktaalit");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Asetukset"));
+        asetusPaneeli.setBorder(javax.swing.BorderFactory.createTitledBorder("Asetukset"));
 
-        jLabel1.setText("Algoritmi");
+        algoritmiOtsikko.setText("Algoritmi");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mandelbrot", "Julia" }));
+        algoritmiValinta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mandelbrot", "Julia" }));
 
-        jLabel2.setText("Hajautus");
+        hajautusOtsikko.setText("Hajautus");
 
-        jButton1.setText("Renderöi");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        renderoiNappi.setText("Renderöi");
+        renderoiNappi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                renderoiNappiActionPerformed(evt);
             }
         });
 
-        jSlider1.setMaximum(16);
-        jSlider1.setMinimum(1);
-        jSlider1.setPaintLabels(true);
-        jSlider1.setPaintTicks(true);
-        jSlider1.setSnapToTicks(true);
-        jSlider1.setValue(1);
-
-        jLabel3.setText("Tila");
-
-        jTextField1.setEditable(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+        hajautusSlideri.setMaximum(16);
+        hajautusSlideri.setMinimum(1);
+        hajautusSlideri.setPaintLabels(true);
+        hajautusSlideri.setPaintTicks(true);
+        hajautusSlideri.setSnapToTicks(true);
+        hajautusSlideri.setValue(1);
+        hajautusSlideri.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                hajautusSlideriPropertyChange(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
+        tilaOtsikko.setText("Tila");
+
+        tilaKentta.setEditable(false);
+        tilaKentta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tilaKenttaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout asetusPaneeliLayout = new javax.swing.GroupLayout(asetusPaneeli);
+        asetusPaneeli.setLayout(asetusPaneeliLayout);
+        asetusPaneeliLayout.setHorizontalGroup(
+            asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(asetusPaneeliLayout.createSequentialGroup()
+                .addComponent(algoritmiOtsikko)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(algoritmiValinta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(renderoiNappi, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+            .addGroup(asetusPaneeliLayout.createSequentialGroup()
+                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hajautusOtsikko)
+                    .addComponent(tilaOtsikko))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hajautusSlideri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tilaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        asetusPaneeliLayout.setVerticalGroup(
+            asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(asetusPaneeliLayout.createSequentialGroup()
+                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(asetusPaneeliLayout.createSequentialGroup()
+                        .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(algoritmiOtsikko)
+                            .addComponent(algoritmiValinta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(hajautusOtsikko)
+                            .addComponent(hajautusSlideri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(asetusPaneeliLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(renderoiNappi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tilaOtsikko)
+                    .addComponent(tilaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout piirtaja2Layout = new javax.swing.GroupLayout(piirtaja2);
-        piirtaja2.setLayout(piirtaja2Layout);
-        piirtaja2Layout.setHorizontalGroup(
-            piirtaja2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout piirtajaLayout = new javax.swing.GroupLayout(piirtaja);
+        piirtaja.setLayout(piirtajaLayout);
+        piirtajaLayout.setHorizontalGroup(
+            piirtajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 644, Short.MAX_VALUE)
         );
-        piirtaja2Layout.setVerticalGroup(
-            piirtaja2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        piirtajaLayout.setVerticalGroup(
+            piirtajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 348, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setViewportView(piirtaja2);
+        liikuteltavaPaneeli.setViewportView(piirtaja);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1)
+            .addComponent(asetusPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(liikuteltavaPaneeli)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+                .addComponent(liikuteltavaPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(asetusPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void renderoiNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renderoiNappiActionPerformed
+        tila.asetaTila("Renderöinti aloitettu!");
+        TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, null, new Kuvapinta(this.piirtaja.getWidth(), this.piirtaja.getHeight()), this.hajautusSlideri.getValue());
+        t.asetaAlue(-1.0, 0.0, 1.5);
+        Hajauttaja h = new Hajauttaja(t);
+        Suorittaja v1 = new Suorittaja(h, this.tila, t, this.piirtaja);
+        v1.execute();
+        //
+    }//GEN-LAST:event_renderoiNappiActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tilaKenttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilaKenttaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tilaKenttaActionPerformed
+
+    private void hajautusSlideriPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_hajautusSlideriPropertyChange
+        // TODO add your handling code here:
+        System.out.println(evt.getPropertyName());
+        if (evt.getPropertyName().equals("value")) {
+            tila.asetaTila("Hajautus asetettu arvoon " + (Integer)evt.getNewValue()+" -> Renderöitäessä luodaan " + Math.pow((Integer)evt.getNewValue(), 2)+" säiettä.");            
+        }
+    }//GEN-LAST:event_hajautusSlideriPropertyChange
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSlider jSlider1;
-    private javax.swing.JTextField jTextField1;
-    private fi.c5.juustofraktaalit.kali.Piirtaja piirtaja2;
+    private javax.swing.JLabel algoritmiOtsikko;
+    private javax.swing.JComboBox algoritmiValinta;
+    private javax.swing.JPanel asetusPaneeli;
+    private javax.swing.JLabel hajautusOtsikko;
+    private javax.swing.JSlider hajautusSlideri;
+    private javax.swing.JScrollPane liikuteltavaPaneeli;
+    private fi.c5.juustofraktaalit.kali.Piirtaja piirtaja;
+    private javax.swing.JButton renderoiNappi;
+    private javax.swing.JTextField tilaKentta;
+    private javax.swing.JLabel tilaOtsikko;
     // End of variables declaration//GEN-END:variables
+    private Tilanne tila;
 }

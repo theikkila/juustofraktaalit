@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Hajauttaa TyoMaarauksen TyoOsiin ja kerää valmistuneet työt
  * @author Teemu Heikkilä
  */
-public class Hajauttaja {
+public class Hajauttaja{
     private final TyoMaarays tyo;
     public TyoOsa[] osat;
     public ArrayList<Thread> tyot;
