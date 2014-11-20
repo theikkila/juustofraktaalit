@@ -17,27 +17,27 @@ public class TyoTest {
 
     @Test
     public void testHaeTyyppi() {
-        TyoImpl tyo = new TyoImpl(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
-        assertEquals(FraktaaliTyyppi.MANDELBROT, tyo.haeTyyppi());
+        TyoImpl tyo = new TyoImpl("Mandelbrot", new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
+        assertEquals("Mandelbrot", tyo.haeTyyppi());
     }
 
     @Test
     public void testHashCode() {
-        TyoImpl tyo = new TyoImpl(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
-        TyoImpl tyo2 = new TyoImpl(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
+        TyoImpl tyo = new TyoImpl("Mandelbrot", new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
+        TyoImpl tyo2 = new TyoImpl("Mandelbrot", new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
         assertTrue(tyo.hashCode() == tyo2.hashCode());
     }
 
     @Test
     public void testEquals() {
-        TyoImpl tyo = new TyoImpl(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
-        TyoImpl tyo2 = new TyoImpl(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
+        TyoImpl tyo = new TyoImpl("Mandelbrot", new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
+        TyoImpl tyo2 = new TyoImpl("Mandelbrot", new Alue(0, 0, 0, 0), new Kuvapinta(100, 100));
         assertTrue(tyo.equals(tyo2) && tyo2.equals(tyo));
     }
 
     public class TyoImpl extends Tyo {
 
-        public TyoImpl(FraktaaliTyyppi f, Alue a, Kuvapinta p) {
+        public TyoImpl(String f, Alue a, Kuvapinta p) {
             super(f, a, p);
         }
 

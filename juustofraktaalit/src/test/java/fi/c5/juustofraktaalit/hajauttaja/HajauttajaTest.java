@@ -19,14 +19,14 @@ import static org.junit.Assert.*;
 public class HajauttajaTest {
     
     @Test
-    public void testHajauta() {
+    public void testHajauta() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Alue a = new Alue(0, 0, 1000, 1000);
-        TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, a, new Kuvapinta(1000, 1000), 2);
+        TyoMaarays t = new TyoMaarays("Mandelbrot", a, new Kuvapinta(1000, 1000), 2);
         Hajauttaja h = new Hajauttaja(t);
         h.hajauta();
         Assert.assertEquals(4, h.osat.length);
         
-        TyoOsa o = new TyoOsa(FraktaaliTyyppi.MANDELBROT, new Alue(0, 0, 500, 500), new Kuvapinta(500, 500));
+        TyoOsa o = new TyoOsa("Mandelbrot", new Alue(0, 0, 500, 500), new Kuvapinta(500, 500));
         System.out.println(h.osat[0]);
         Assert.assertTrue(h.osat[0].equals(o));
     }
