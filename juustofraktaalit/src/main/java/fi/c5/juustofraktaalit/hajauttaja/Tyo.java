@@ -5,7 +5,6 @@
  */
 package fi.c5.juustofraktaalit.hajauttaja;
 
-import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 import java.util.Objects;
 
 /**
@@ -13,7 +12,7 @@ import java.util.Objects;
  * @author Teemu Heikkilä
  */
 public abstract class Tyo implements Runnable {
-    private final FraktaaliTyyppi fraktaali;
+    private final String fraktaali;
 
     /**
      * Alue-muuttujaan on tallennettuna työalue
@@ -30,17 +29,17 @@ public abstract class Tyo implements Runnable {
      * @param alue Työalue
      * @param pinta Kuvapinta
      */
-    public Tyo(FraktaaliTyyppi fraktaali, Alue alue, Kuvapinta pinta) {
+    public Tyo(String fraktaali, Alue alue, Kuvapinta pinta) {
         this.fraktaali = fraktaali;
         this.alue = alue;
         this.pinta = pinta;
     }
     
     /**
-     * Palauttaa työn fraktaalityypin
+     * Palauttaa työn fraktaalin luokkanimen
      * @return fraktaalityyppi
      */
-    public FraktaaliTyyppi haeTyyppi () {
+    public String haeTyyppi () {
         return this.fraktaali;
     }
 

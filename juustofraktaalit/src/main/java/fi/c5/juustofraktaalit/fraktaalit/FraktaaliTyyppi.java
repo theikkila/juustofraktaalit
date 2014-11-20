@@ -6,9 +6,15 @@
 package fi.c5.juustofraktaalit.fraktaalit;
 
 /**
- *
+ * Eri fraktaalityypit tallennetaan haeFraktaaliTyypit-metodiin
  * @author Teemu Heikkilä
  */
-public enum FraktaaliTyyppi {
-    MANDELBROT, JULIA
+public class FraktaaliTyyppi {
+    public static String[] haeFraktaaliTyypit() {
+        String[] fraktaalit = {"Mandelbrot", "Julia"}; 
+        return fraktaalit;
+    }
+    public static String haeLuokanNimi(String fraktaali) {
+        return "fi.c5.juustofraktaalit.fraktaalit."+fraktaali;
+    }
 }

@@ -19,13 +19,10 @@ import javax.imageio.ImageIO;
  */
 public class TyoOsa extends Tyo{
     Fraktaali f;
-    public TyoOsa(FraktaaliTyyppi fraktaali, Alue alue, Kuvapinta pinta) {
+    public TyoOsa(String fraktaali, Alue alue, Kuvapinta pinta) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         super(fraktaali, alue, pinta);
-        if (fraktaali == FraktaaliTyyppi.JULIA) {
-            f = new Julia();            
-        } else {
-            f = new Mandelbrot();
-        }
+        Class luokka = Class.forName(FraktaaliTyyppi.haeLuokanNimi(fraktaali));
+        f = (Fraktaali) luokka.newInstance();
         f.asetaAlueet(alue, pinta);
     }
     

@@ -14,7 +14,7 @@ import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
 import fi.c5.juustofraktaalit.hajauttaja.TyoVaihe;
 
 /**
- *
+ * Käyttöliittymän pääkomponentti
  * @author Teemu Heikkilä
  */
 public class Fraktaaliselain extends javax.swing.JFrame {
@@ -23,7 +23,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
     int zoomTaso;
     Double zoom;
     /**
-     * Creates new form Fraktaaliselain
+     * Konstruktori käyttöliittymän pääkomponentille
      */
     public Fraktaaliselain() {
         initComponents();
@@ -213,12 +213,15 @@ public class Fraktaaliselain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private void renderoi(){
         tila.asetaTila("Renderöinti aloitettu!");
-        TyoMaarays t = new TyoMaarays(FraktaaliTyyppi.MANDELBROT, null, new Kuvapinta(this.piirtaja.getWidth(), this.piirtaja.getHeight()), this.hajautusSlideri.getValue());
+        TyoMaarays t = new TyoMaarays((String)algoritmiValinta.getSelectedItem(), null, new Kuvapinta(this.piirtaja.getWidth(), this.piirtaja.getHeight()), this.hajautusSlideri.getValue());
         t.asetaAlue(keskipiste_x, keskipiste_y, zoom);
         Hajauttaja h = new Hajauttaja(t);
         Suorittaja v1 = new Suorittaja(h, this.tila, t, this.piirtaja);
         v1.execute();
         
+    }
+    private void asetaFraktaaliAlgoritmit() {
+        algoritmiValinta.setModel(new javax.swing.DefaultComboBoxModel(FraktaaliTyyppi.haeFraktaaliTyypit()));
     }
     private void renderoiNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renderoiNappiActionPerformed
         renderoi();

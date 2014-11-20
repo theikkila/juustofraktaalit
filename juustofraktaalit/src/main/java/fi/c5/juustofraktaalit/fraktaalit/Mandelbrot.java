@@ -9,7 +9,7 @@ import fi.c5.juustofraktaalit.hajauttaja.Alue;
 import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 
 /**
- *
+ * Mandelbrot-fraktaali
  * @author Teemu Heikkilä
  */
 public class Mandelbrot extends Fraktaali {
@@ -48,16 +48,6 @@ public class Mandelbrot extends Fraktaali {
         
         */
         return this.paletti[(int) Math.floor(Tyokalut.map((double) iteration, 0.0, (double) max_iterations, 0.0, 254.0))];
-    }
-
-    /**
-     * Palauttaa fraktaalin tyypin
-     *
-     * @return fraktaalin tyyppi
-     */
-    @Override
-    public FraktaaliTyyppi haeTyyppi() {
-        return FraktaaliTyyppi.MANDELBROT;
     }
 
     /**

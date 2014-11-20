@@ -14,7 +14,7 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 public class TyoMaarays extends Tyo{
     private int hajautus;
 
-    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue, Kuvapinta pinta) {
+    public TyoMaarays(String fraktaali, Alue alue, Kuvapinta pinta) {
         super(fraktaali, alue, pinta);
         hajautus = 1;
     }
@@ -26,7 +26,7 @@ public class TyoMaarays extends Tyo{
      * @param pinta
      * @param hajautus
      */
-    public TyoMaarays(FraktaaliTyyppi fraktaali, Alue alue, Kuvapinta pinta,  int hajautus) {
+    public TyoMaarays(String fraktaali, Alue alue, Kuvapinta pinta,  int hajautus) {
         super(fraktaali, alue, pinta);
         this.hajautus = hajautus;
     }
