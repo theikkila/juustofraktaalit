@@ -33,8 +33,10 @@ Sivuhuomiona luokkakaavio on tällä hetkellä hieman vanhentunut refaktoroinnin
 | PVM    | Käytetyt tunnit | Työn kohde                                                  |
 |--------|-----------------|-------------------------------------------------------------|
 | 14.11. | 1               | Alueen refaktorointi, mandelbrot-algoritmin kirjoittaminen  |
-|   .11. | -               | -                                                           |
-|   .11. | -               | -                                                           |
+| 20.11. | 3               | Käyttöliittymän suunnittelu ja rakentaminen                 |
+| 20.11. | 0.5             | Yleinen refaktorointi ja testien kirjoittaminen             |
+
+Viikon työt kärsivät hieman Slushista ja tenteistä.
 
 ## Viikko 5
 

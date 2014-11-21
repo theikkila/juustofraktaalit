@@ -7,12 +7,6 @@ package fi.c5.juustofraktaalit.hajauttaja;
 
 import fi.c5.juustofraktaalit.fraktaalit.Fraktaali;
 import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
-import fi.c5.juustofraktaalit.fraktaalit.Julia;
-import fi.c5.juustofraktaalit.fraktaalit.Mandelbrot;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-
 /**
  * Työn osa on työn palanen ja vastaa omalta osaltaan pikseleiden renderöimisestä fraktaalialgoritmilla
  * @author Teemu Heikkilä

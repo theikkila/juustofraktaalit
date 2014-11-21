@@ -23,3 +23,8 @@ Ensimmäiset fraktaalit!!
 
 ### Quad-Spiral valley
 ![Quad-Spiral valley](https://raw.githubusercontent.com/theikkila/juustofraktaalit/master/dokumentointi/testikuvia/fraktaali_1.png)
+
+## 20.11.
+
+Käli näyttää käliltä
+![käli](https://raw.githubusercontent.com/theikkila/juustofraktaalit/master/dokumentointi/testikuvia/kali.png)
