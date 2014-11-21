@@ -8,7 +8,7 @@ package fi.c5.juustofraktaalit.kali;
 import javax.swing.JTextField;
 
 /**
- *
+ * Tilanne toimii tekstikentälle wräpperinä ja päivittää sen sisältöä atomisesti.
  * @author Teemu Heikkilä
  */
 public class Tilanne {

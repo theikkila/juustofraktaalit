@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- *
+ * Työkalut on kokoelma staattisia työkalumetodeja
  * @author Teemu Heikkilä
  */
 public class Tyokalut {

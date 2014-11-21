@@ -14,7 +14,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- *
+ * Työn osa on työn palanen ja vastaa omalta osaltaan pikseleiden renderöimisestä fraktaalialgoritmilla
  * @author Teemu Heikkilä
  */
 public class TyoOsa extends Tyo{

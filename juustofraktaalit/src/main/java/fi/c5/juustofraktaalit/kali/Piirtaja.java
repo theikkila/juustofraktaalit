@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
- *
+ * Piirtäjä on Swing-komponentti kuva-datan esittämiseen
  * @author Teemu Heikkilä
  */
 public class Piirtaja extends JPanel {

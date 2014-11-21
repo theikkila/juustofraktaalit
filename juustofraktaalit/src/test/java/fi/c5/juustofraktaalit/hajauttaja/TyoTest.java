@@ -5,7 +5,6 @@
  */
 package fi.c5.juustofraktaalit.hajauttaja;
 
-import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

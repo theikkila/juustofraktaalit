@@ -11,7 +11,7 @@ import java.awt.List;
 import javax.swing.SwingWorker;
 
 /**
- *
+ * Suorittaja on SwingWorker joka suorittaa varsinaisen renderöintityön ja seuraa sen etenemistä.
  * @author Teemu Heikkilä
  */
 

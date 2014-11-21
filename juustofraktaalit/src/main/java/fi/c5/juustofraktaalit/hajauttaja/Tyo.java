@@ -8,7 +8,7 @@ package fi.c5.juustofraktaalit.hajauttaja;
 import java.util.Objects;
 
 /**
- *
+ * Työ on abstrakti yliluokka joka kuvaa renderöintityötä kokonaisuutena
  * @author Teemu Heikkilä
  */
 public abstract class Tyo implements Runnable {

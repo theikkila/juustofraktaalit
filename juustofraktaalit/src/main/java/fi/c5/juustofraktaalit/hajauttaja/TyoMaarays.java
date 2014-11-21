@@ -8,7 +8,7 @@ package fi.c5.juustofraktaalit.hajauttaja;
 import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 
 /**
- *
+ * Työmääräys kuvaa renderöintityötä ennen hajautusta
  * @author Teemu Heikkilä
  */
 public class TyoMaarays extends Tyo{

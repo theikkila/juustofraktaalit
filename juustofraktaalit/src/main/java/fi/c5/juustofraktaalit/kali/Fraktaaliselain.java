@@ -11,7 +11,6 @@ import fi.c5.juustofraktaalit.hajauttaja.Hajauttaja;
 import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 import fi.c5.juustofraktaalit.hajauttaja.Suorittaja;
 import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
-import fi.c5.juustofraktaalit.hajauttaja.TyoVaihe;
 
 /**
  * Käyttöliittymän pääkomponentti

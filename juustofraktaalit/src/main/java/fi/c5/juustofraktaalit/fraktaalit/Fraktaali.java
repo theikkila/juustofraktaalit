@@ -21,6 +21,6 @@ public abstract class Fraktaali {
     * @return fraktaalin tyyppi
     */
     public String haeTyyppi(){
-       return this.getClass().toString();
+       return this.getClass().getSimpleName();
     }
 }

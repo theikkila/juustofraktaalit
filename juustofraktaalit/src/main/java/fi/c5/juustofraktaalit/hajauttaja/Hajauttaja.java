@@ -24,7 +24,7 @@ public class Hajauttaja{
     /**
      * Hajauttaa työmääräyksen työosiin
      */
-    public void hajauta() {
+    public void hajauta() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         int hajautus = this.tyo.haeHajautus();
         int tyomaara = hajautus * hajautus; // Työ pilkotaan osiin ja osien lukumäärä on hajautus^2
         // Alustetaan taulukko työn osille

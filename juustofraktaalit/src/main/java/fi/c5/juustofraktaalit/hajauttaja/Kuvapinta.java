@@ -9,7 +9,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 /**
- *
+ * Kuvapinta on wräpperi BufferedImagen päälle
  * @author Teemu Heikkilä
  */
 public class Kuvapinta {
