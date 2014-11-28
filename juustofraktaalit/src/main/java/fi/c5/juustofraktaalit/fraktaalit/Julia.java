@@ -15,7 +15,8 @@ import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 public class Julia extends Fraktaali{
 
     public void asetaAlueet(Alue alue, Alue kuvapinta) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
@@ -25,7 +26,7 @@ public class Julia extends Fraktaali{
 
     @Override
     public void asetaAlueet(Alue alue, Kuvapinta kuvapinta) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

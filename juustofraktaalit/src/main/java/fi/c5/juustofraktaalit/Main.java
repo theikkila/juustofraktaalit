@@ -26,6 +26,7 @@ public class Main {
         System.out.println("Juustofraktaalit - pääohjelma");
         
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Fraktaaliselain().setVisible(true);
             }

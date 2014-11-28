@@ -19,12 +19,11 @@ public class Mandelbrot extends Fraktaali {
     private Kuvapinta kuvapinta;
 
     public Mandelbrot() {
-        this.paletti = new int[255];
-        for (int i = 0; i < 255; i++) {
-            paletti[i] = Tyokalut.rgb(i-20, i-20, i+20);
+        this.paletti = new int[370];
+        for (int i = 0; i < 370; i++) {
+            paletti[i] = Tyokalut.wavelength_to_rgb(i+380, 0.80);
         }
     }
-
     @Override
     public int laskeVari(int px, int py) {
         Double x0 = Tyokalut.map(new Double(px), 0.0, new Double(this.kuvapinta.leveys), this.alue.x1, this.alue.x2);
@@ -32,7 +31,7 @@ public class Mandelbrot extends Fraktaali {
         Double x = 0.0;
         Double y = 0.0;
         int iteration = 0;
-        int max_iterations = 100;
+        int max_iterations = 500;
         // x * x + y * y < 2 * 2 && iteration < max_iterations
         while(x*x+y*y < 4 && iteration < max_iterations) {
             // xtemp = x * x - y * y + x0;
@@ -47,7 +46,7 @@ public class Mandelbrot extends Fraktaali {
 
         
         */
-        return this.paletti[(int) Math.floor(Tyokalut.map((double) iteration, 0.0, (double) max_iterations, 0.0, 254.0))];
+        return this.paletti[(int) Math.floor(Tyokalut.map((double) iteration, 0.0, (double) max_iterations, 0.0, this.paletti.length-1))];
     }
 
     /**

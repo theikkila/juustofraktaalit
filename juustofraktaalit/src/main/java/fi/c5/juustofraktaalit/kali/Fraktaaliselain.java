@@ -20,6 +20,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
     Double keskipiste_x;
     Double keskipiste_y;
     int zoomTaso;
+    int rulla;
     Double zoom;
     /**
      * Konstruktori käyttöliittymän pääkomponentille
@@ -30,6 +31,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
         tila.asetaTila("Valmis!");
         this.keskipiste_x = -1.0;
         this.keskipiste_y = 0.0;
+        this.rulla = 0;
         this.zoomTaso = 0;
         this.zoom = 1.5;
         paivitaLisatiedot();
@@ -139,7 +141,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
                                 .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(algoritmiOtsikko)
                                     .addComponent(algoritmiValinta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(36, 36, 36)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(hajautusOtsikko)
                                     .addComponent(hajautusSlideri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -227,7 +229,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
     }//GEN-LAST:event_renderoiNappiActionPerformed
     private void paivitaLisatiedot(){
         keskipisteOtsikko.setText("Keskipiste: ("+keskipiste_x+","+keskipiste_y+")");
-        zoomOtsikko.setText("Zoom: "+ zoom);
+        zoomOtsikko.setText("Zoom: "+ zoom + " Taso:" + zoomTaso);
     }
     private void tilaKenttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilaKenttaActionPerformed
         // TODO add your handling code here:
@@ -239,8 +241,10 @@ public class Fraktaaliselain extends javax.swing.JFrame {
     }//GEN-LAST:event_hajautusSlideriStateChanged
 
     private void piirtajaMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_piirtajaMouseWheelMoved
-        zoomTaso += Math.pow(evt.getWheelRotation(), Math.max(2, zoomTaso))*Math.signum(evt.getWheelRotation());
-        zoom = 1.0 / Math.max(zoomTaso, .5);
+        zoomTaso += evt.getWheelRotation();
+        zoomTaso = Math.min(zoomTaso, 0);
+        zoom = 1.0 / Math.pow(zoomTaso, 4);
+        zoom = Math.min(zoom, 4.0);
         paivitaLisatiedot();
     }//GEN-LAST:event_piirtajaMouseWheelMoved
 
