@@ -57,4 +57,7 @@ public class Piirtaja extends JPanel {
         setLayout(null);
         this.repaint();
     }
+    public Image haeKuva(){
+        return this.kuva;
+    }
 }

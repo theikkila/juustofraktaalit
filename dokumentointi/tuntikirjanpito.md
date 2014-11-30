@@ -40,7 +40,11 @@ Viikon työt kärsivät hieman Slushista ja tenteistä.
 
 ## Viikko 5
 
---
+| PVM    | Käytetyt tunnit | Työn kohde                                                  |
+|--------|-----------------|-------------------------------------------------------------|
+| 27.11. | 1               | Käyttöliittymän parantaminen                                |
+| 27.11. | 3               | Tallennusmekanismien ohjelmointi                            |
+| 27.11. | 1               | Sekvenssikaavioiden tekeminen                               |
 
 ## Viikko 6
 

@@ -1,0 +1,58 @@
+title Fraktaalin renderöinti
+
+Renderöi-nappi->Käyttöliittymä: Nappia painetaan: renderoi()
+Käyttöliittymä->TyoMaarays: Luodaan työmääräys
+TyoMaarays-->Käyttöliittymä: t = new TyoMaarays()
+Käyttöliittymä->TyoMaarays: t.asetaAue()
+Käyttöliittymä->Hajauttaja: Luodaan hajauttaja
+Hajauttaja-->Käyttöliittymä: h = new Hajauttaja(t)
+Käyttöliittymä->Suorittaja: Luodaan suorittaja
+Suorittaja-->Käyttöliittymä: v1 = new Suorittaja(h)
+Käyttöliittymä->Suorittaja: v1.execute()
+Suorittaja->Suorittaja: doInBackground()
+Suorittaja->Hajauttaja: hajauta()
+Suorittaja->Hajauttaja: renderoi()
+Suorittaja->Hajauttaja: kokoa()
+Hajauttaja-->Käyttöliittymä: Esitä renderöity kuva käyttöliittymässä
+
+
+
+
+title Fraktaalin renderöinnin vaiheet: Hajautus
+Suorittaja->Hajauttaja: hajauta()
+Hajauttaja->TyoMaarays: haeHajautus()
+TyoMaarays-->Hajauttaja: hajautus = haeHajautus()
+loop for TyoOsa t in (hajautus * hajautus)
+    Hajauttaja->TyoOsa: t = new TyoOsa()
+end
+Hajauttaja-->Suorittaja: Hajautus valmis
+
+
+
+
+
+title Fraktaalin renderöinnin vaiheet: Renderöi
+Suorittaja->Hajauttaja: renderoi()
+loop for TyoOsa t in osat
+    Hajauttaja->Thread: new Thread(t)
+    Hajauttaja->Thread: start()
+end
+
+loop while(not kaikki säikeet valmiina)
+    Hajauttaja->Thread: Onko säie valmis?
+    Thread-->Hajauttaja: Säikeen tila
+end
+Hajauttaja-->Suorittaja: Renderöinti valmis
+
+
+
+title Fraktaalin renderöinnin vaiheet: Kokoaminen
+Suorittaja->Hajauttaja: kokoa()
+Hajauttaja->TyoMaarays: haeHajautus()
+TyoMaarays-->Hajauttaja: hajautus = haeHajautus()
+loop for TyoOsa t in osat
+    Hajauttaja->TyoOsa: t.haePinta()
+    TyoOsa-->Hajauttaja: pinta = t.haePinta()
+    Hajauttaja->TyoMaarays: asetaPinta(x, y, pinta)
+end
+Hajauttaja-->Suorittaja: Kokoaminen valmis
