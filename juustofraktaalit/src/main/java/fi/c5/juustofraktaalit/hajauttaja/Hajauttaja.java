@@ -32,23 +32,27 @@ public class Hajauttaja{
         int tyomaara = hajautus * hajautus; // Työ pilkotaan osiin ja osien lukumäärä on hajautus^2
         // Alustetaan taulukko työn osille
         this.osat = new TyoOsa[tyomaara];
-        Double origo_x = this.tyo.alue.x1;
-        Double origo_y = this.tyo.alue.y1;
-        Double leveys = this.tyo.alue.haeLeveys()/hajautus;
-        Double korkeus = this.tyo.alue.haeKorkeus()/hajautus;
         Kuvapinta k = this.tyo.pinta;
         for (int i = 0; i < tyomaara; i++) {
             int x = (i % hajautus);
             int y = (i / hajautus);
-            Double a_x = leveys*x+origo_x;
-            Double a_y = korkeus*y+origo_y;
-                        System.out.println("("+a_x+","+a_y+")");
-            Double b_x = a_x+leveys;
-            Double b_y = a_y+korkeus;
-            osat[i] = new TyoOsa(this.tyo.haeTyyppi(), new Alue(a_x, a_y, b_x, b_y), new Kuvapinta(k.leveys/hajautus, k.korkeus/hajautus));
+            Alue a = haeAlue(x, y);
+            Kuvapinta kp = new Kuvapinta(k.leveys/hajautus, k.korkeus/hajautus);
+            osat[i] = new TyoOsa(this.tyo.haeTyyppi(), a, kp);
         }
     }
-    
+    private Alue haeAlue(int x, int y) {
+        int hajautus = this.tyo.haeHajautus();
+        double leveys = this.tyo.alue.haeLeveys()/hajautus;
+        double korkeus = this.tyo.alue.haeKorkeus()/hajautus;
+        double origo_x = this.tyo.alue.x1;
+        double origo_y = this.tyo.alue.y1;
+        double a_x = leveys*x+origo_x;
+        double a_y = korkeus*y+origo_y;
+        double b_x = a_x+leveys;
+        double b_y = a_y+korkeus;
+        return new Alue(a_x, a_y, b_x, b_y);
+    }
     public void renderoi() {
         for (TyoOsa osat1 : this.osat) {
             tyot.add(new Thread(osat1));

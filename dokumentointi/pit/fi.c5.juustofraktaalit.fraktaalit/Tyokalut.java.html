@@ -1,0 +1,1445 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+</style>
+
+</head>
+<body>
+
+
+<h1>Tyokalut.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_1'/>
+1
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_1'></a>
+</td>
+<td class=''><pre><span  class=''>/*</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_2'/>
+2
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_2'></a>
+</td>
+<td class=''><pre><span  class=''> * To change this license header, choose License Headers in Project Properties.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_3'/>
+3
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_3'></a>
+</td>
+<td class=''><pre><span  class=''> * To change this template file, choose Tools | Templates</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_4'/>
+4
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_4'></a>
+</td>
+<td class=''><pre><span  class=''> * and open the template in the editor.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_5'/>
+5
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_5'></a>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_6'/>
+6
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_6'></a>
+</td>
+<td class=''><pre><span  class=''>package fi.c5.juustofraktaalit.fraktaalit;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_7'/>
+7
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_7'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_8'/>
+8
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_8'></a>
+</td>
+<td class=''><pre><span  class=''>import java.math.BigDecimal;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_9'/>
+9
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_9'></a>
+</td>
+<td class=''><pre><span  class=''>import java.math.RoundingMode;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_10'/>
+10
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_10'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_11'/>
+11
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_11'></a>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_12'/>
+12
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_12'></a>
+</td>
+<td class=''><pre><span  class=''> * Ty&#246;kalut on kokoelma staattisia ty&#246;kalumetodeja</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_13'/>
+13
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_13'></a>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_14'/>
+14
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_14'></a>
+</td>
+<td class=''><pre><span  class=''> * @author Teemu Heikkil&#228;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_15'/>
+15
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_15'></a>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_16'/>
+16
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_16'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>public class Tyokalut {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_17'/>
+17
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_17'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_18'/>
+18
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_18'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_19'/>
+19
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_19'></a>
+</td>
+<td class=''><pre><span  class=''>     * Luo kokonaislukumuotoisena arvon v&#228;rille</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_20'/>
+20
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_20'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_21'/>
+21
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_21'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param r punaisen komponentin m&#228;&#228;r&#228; 0-255</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_22'/>
+22
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_22'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param g vihre&#228;n komponentin m&#228;&#228;r&#228; 0-255</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_23'/>
+23
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_23'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param b sinisen komponentin m&#228;&#228;r&#228; 0-255</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_24'/>
+24
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_24'></a>
+</td>
+<td class=''><pre><span  class=''>     * @return v&#228;ri kokonaislukuna</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_25'/>
+25
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_25'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_26'/>
+26
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_26'></a>
+</td>
+<td class=''><pre><span  class=''>    public static int rgb(int r, int g, int b) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_27'/>
+27
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_27'></a>
+</td>
+<td class='covered'><pre><span  class=''>        r = Math.min(255, Math.max(r, 0));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_28'/>
+28
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_28'></a>
+</td>
+<td class='covered'><pre><span  class=''>        g = Math.min(255, Math.max(g, 0));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_29'/>
+29
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_29'></a>
+</td>
+<td class='covered'><pre><span  class=''>        b = Math.min(255, Math.max(b, 0));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_30'/>
+30
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_30'>5</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return (r &#60;&#60; 16) | (g &#60;&#60; 8) | b;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_31'/>
+31
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_31'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_32'/>
+32
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_32'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_33'/>
+33
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_33'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_34'/>
+34
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_34'></a>
+</td>
+<td class=''><pre><span  class=''>     * Siirt&#228;&#228; luvun x asteikolta in_min-in_max asteikolle out_min-out_max</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_35'/>
+35
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_35'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_36'/>
+36
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_36'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param x M&#228;p&#228;tt&#228;v&#228; luku</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_37'/>
+37
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_37'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param in_min M&#228;p&#228;tt&#228;v&#228;n lukuavaruuden pienin arvo</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_38'/>
+38
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_38'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param in_max M&#228;p&#228;tt&#228;v&#228;n lukuavaruuden suurin arvo</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_39'/>
+39
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_39'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param out_min Ulostulevan lukuavaruuden pienin arvo</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_40'/>
+40
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_40'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param out_max Ulostulevan lukuavaruuden suurin arvo</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_41'/>
+41
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_41'></a>
+</td>
+<td class=''><pre><span  class=''>     * @return</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_42'/>
+42
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_42'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_43'/>
+43
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_43'></a>
+</td>
+<td class=''><pre><span  class=''>    public static double map(double x, double in_min, double in_max, double out_min, double out_max) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_44'/>
+44
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_44'>7</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_45'/>
+45
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_45'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_46'/>
+46
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_46'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_47'/>
+47
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_47'></a>
+</td>
+<td class=''><pre><span  class=''>    public static BigDecimal map(BigDecimal x, BigDecimal in_min, BigDecimal in_max, BigDecimal out_min, BigDecimal out_max) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_48'/>
+48
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_48'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return x.subtract(in_min).multiply(out_max.subtract(out_min)).divide(in_max.subtract(in_min), RoundingMode.HALF_UP).add(out_min);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_49'/>
+49
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_49'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_50'/>
+50
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_50'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_51'/>
+51
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_51'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_52'/>
+52
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_52'></a>
+</td>
+<td class=''><pre><span  class=''>     * Muuntaa aallonpituuden nanometreiss&#228; RGB-v&#228;riksi</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_53'/>
+53
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_53'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param wavelength aallonpituus</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_54'/>
+54
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_54'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param gamma gamma-arvo</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_55'/>
+55
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_55'></a>
+</td>
+<td class=''><pre><span  class=''>     * @return v&#228;rin kokonaislukuun pakattuna</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_56'/>
+56
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_56'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_57'/>
+57
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_57'></a>
+</td>
+<td class=''><pre><span  class=''>    public static int wavelength_to_rgb(double wavelength, double gamma) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_58'/>
+58
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_58'></a>
+</td>
+<td class=''><pre><span  class=''>        double R, G, B, attenuation;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_59'/>
+59
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_59'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (wavelength &#62;= 380 &#38;&#38; wavelength &#60;= 440) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_60'/>
+60
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_60'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            attenuation = 0.3 + 0.7 * (wavelength - 380) / (440 - 380);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_61'/>
+61
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_61'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            R = Math.pow((-(wavelength - 440) / (440 - 380)) * attenuation, gamma);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_62'/>
+62
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_62'></a>
+</td>
+<td class='covered'><pre><span  class=''>            G = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_63'/>
+63
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_63'>1</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            B = Math.pow(1.0 * attenuation, gamma);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_64'/>
+64
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_64'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        } else if (wavelength &#62;= 440 &#38;&#38; wavelength &#60;= 490) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_65'/>
+65
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_65'></a>
+</td>
+<td class='covered'><pre><span  class=''>            R = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_66'/>
+66
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_66'>2</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            G = Math.pow((wavelength - 440) / (490 - 440), gamma);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_67'/>
+67
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_67'></a>
+</td>
+<td class='covered'><pre><span  class=''>            B = 1.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_68'/>
+68
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_68'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        } else if (wavelength &#62;= 490 &#38;&#38; wavelength &#60;= 510) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_69'/>
+69
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_69'></a>
+</td>
+<td class='covered'><pre><span  class=''>            R = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_70'/>
+70
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_70'></a>
+</td>
+<td class='covered'><pre><span  class=''>            G = 1.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_71'/>
+71
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_71'>3</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            B = Math.pow(-(wavelength - 510) / (510 - 490), gamma);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_72'/>
+72
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_72'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        } else if (wavelength &#62;= 510 &#38;&#38; wavelength &#60;= 580) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_73'/>
+73
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_73'>2</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            R = Math.pow((wavelength - 510) / (580 - 510), gamma);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_74'/>
+74
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_74'></a>
+</td>
+<td class='covered'><pre><span  class=''>            G = 1.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_75'/>
+75
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_75'></a>
+</td>
+<td class='covered'><pre><span  class=''>            B = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_76'/>
+76
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_76'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        } else if (wavelength &#62;= 580 &#38;&#38; wavelength &#60;= 645) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_77'/>
+77
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_77'></a>
+</td>
+<td class='covered'><pre><span  class=''>            R = 1.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_78'/>
+78
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_78'>3</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            G = Math.pow(-(wavelength - 645) / (645 - 580), gamma);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_79'/>
+79
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_79'></a>
+</td>
+<td class='covered'><pre><span  class=''>            B = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_80'/>
+80
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_80'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        } else if (wavelength &#62;= 645 &#38;&#38; wavelength &#60;= 750) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_81'/>
+81
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_81'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            attenuation = 0.3 + 0.7 * (750 - wavelength) / (750 - 645);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_82'/>
+82
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_82'>1</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            R = Math.pow((1.0 * attenuation), gamma);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_83'/>
+83
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_83'></a>
+</td>
+<td class='covered'><pre><span  class=''>            G = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_84'/>
+84
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_84'></a>
+</td>
+<td class='covered'><pre><span  class=''>            B = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_85'/>
+85
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_85'></a>
+</td>
+<td class=''><pre><span  class=''>        } else {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_86'/>
+86
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_86'></a>
+</td>
+<td class='covered'><pre><span  class=''>            R = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_87'/>
+87
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_87'></a>
+</td>
+<td class='covered'><pre><span  class=''>            G = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_88'/>
+88
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_88'></a>
+</td>
+<td class='covered'><pre><span  class=''>            B = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_89'/>
+89
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_89'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_90'/>
+90
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_90'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        R *= 255;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_91'/>
+91
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_91'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        G *= 255;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_92'/>
+92
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_92'>1</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        B *= 255;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_93'/>
+93
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_93'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return rgb((int) R, (int) G, (int) B);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_94'/>
+94
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_94'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1965539b_95'/>
+95
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_95'></a>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_30'/> 
+
+<p class='KILLED'>Replaced bitwise OR with AND : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testRgbMuuVari(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='KILLED'>Replaced Shift Left with Shift Right : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testRgbMuuVari(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='KILLED'>Replaced bitwise OR with AND : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testRgbMuuVari(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='KILLED'>replaced return of integer sized value with (x == 0 ? 1 : 0) : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testRgbMuuVari(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='KILLED'>Replaced Shift Left with Shift Right : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testRgbMuuVari(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_44'>44</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_44'/> 
+
+<p class='NO_COVERAGE'>Replaced double subtraction with addition : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced double subtraction with addition : NO_COVERAGE</p> <p class='NO_COVERAGE'>replaced return of double value with -(x + 1) for fi/c5/juustofraktaalit/fraktaalit/Tyokalut::map : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced double multiplication with division : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced double division with multiplication : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced double addition with subtraction : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced double subtraction with addition : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_48'>48</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_48'/> 
+
+<p class='NO_COVERAGE'>mutated return of Object value for fi/c5/juustofraktaalit/fraktaalit/Tyokalut::map to ( if (x != null) null else throw new RuntimeException ) : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_59'>59</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_59'/> 
+
+<p class='SURVIVED'>negated conditional : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_60'>60</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_60'/> 
+
+<p class='SURVIVED'>Replaced double division with multiplication : SURVIVED</p> <p class='SURVIVED'>Replaced double multiplication with division : SURVIVED</p> <p class='SURVIVED'>Replaced double addition with subtraction : SURVIVED</p> <p class='SURVIVED'>Replaced double subtraction with addition : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_61'>61</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_61'/> 
+
+<p class='SURVIVED'>Replaced double subtraction with addition : SURVIVED</p> <p class='SURVIVED'>Replaced double multiplication with division : SURVIVED</p> <p class='SURVIVED'>Replaced double division with multiplication : SURVIVED</p> <p class='SURVIVED'>removed negation : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_63'>63</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_63'/> 
+
+<p class='SURVIVED'>Replaced double multiplication with division : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_64'>64</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_64'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnosNolla(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_66'>66</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_66'/> 
+
+<p class='SURVIVED'>Replaced double division with multiplication : SURVIVED</p> <p class='SURVIVED'>Replaced double subtraction with addition : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_68'>68</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_68'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnosNolla(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_71'>71</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_71'/> 
+
+<p class='SURVIVED'>removed negation : SURVIVED</p> <p class='SURVIVED'>Replaced double division with multiplication : SURVIVED</p> <p class='SURVIVED'>Replaced double subtraction with addition : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_72'>72</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_72'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnosNolla(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_73'>73</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_73'/> 
+
+<p class='SURVIVED'>Replaced double division with multiplication : SURVIVED</p> <p class='SURVIVED'>Replaced double subtraction with addition : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_76'>76</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_76'/> 
+
+<p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnosNolla(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_78'/> 
+
+<p class='KILLED'>Replaced double division with multiplication : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='KILLED'>Replaced double subtraction with addition : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='KILLED'>removed negation : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_80'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnosNolla(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='SURVIVED'>negated conditional : SURVIVED</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_81'>81</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_81'/> 
+
+<p class='SURVIVED'>Replaced double subtraction with addition : SURVIVED</p> <p class='SURVIVED'>Replaced double multiplication with division : SURVIVED</p> <p class='SURVIVED'>Replaced double division with multiplication : SURVIVED</p> <p class='SURVIVED'>Replaced double addition with subtraction : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_82'/> 
+
+<p class='SURVIVED'>Replaced double multiplication with division : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_90'>90</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_90'/> 
+
+<p class='KILLED'>Replaced double multiplication with division : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_91'>91</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_91'/> 
+
+<p class='KILLED'>Replaced double multiplication with division : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_92'>92</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_92'/> 
+
+<p class='SURVIVED'>Replaced double multiplication with division : SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1965539b_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1965539b_93'/> 
+
+<p class='KILLED'>replaced return of integer sized value with (x == 0 ? 1 : 0) : KILLED -> fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnosNolla(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest)</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testRgbMuuVari(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest) (1 ms)</li><li>fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnosNolla(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest) (1 ms)</li><li>fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testRgbEiLukualueella(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest) (1 ms)</li><li>fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testAallonpituusMuunnos(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest) (3 ms)</li><li>fi.c5.juustofraktaalit.fraktaalit.TyokalutTest.testRgb(fi.c5.juustofraktaalit.fraktaalit.TyokalutTest) (1 ms)</li><li>fi.c5.juustofraktaalit.hajauttaja.HajauttajaTest.testHajauta(fi.c5.juustofraktaalit.hajauttaja.HajauttajaTest) (54 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 0.30
+
+</body>
+</html>

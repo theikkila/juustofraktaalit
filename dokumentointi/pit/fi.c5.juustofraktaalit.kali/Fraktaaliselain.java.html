@@ -1,0 +1,5994 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+</style>
+
+</head>
+<body>
+
+
+<h1>Fraktaaliselain.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_1'/>
+1
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_1'></a>
+</td>
+<td class=''><pre><span  class=''>/*</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_2'/>
+2
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_2'></a>
+</td>
+<td class=''><pre><span  class=''> * To change this license header, choose License Headers in Project Properties.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_3'/>
+3
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_3'></a>
+</td>
+<td class=''><pre><span  class=''> * To change this template file, choose Tools | Templates</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_4'/>
+4
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_4'></a>
+</td>
+<td class=''><pre><span  class=''> * and open the template in the editor.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_5'/>
+5
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_5'></a>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_6'/>
+6
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_6'></a>
+</td>
+<td class=''><pre><span  class=''>package fi.c5.juustofraktaalit.kali;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_7'/>
+7
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_7'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_8'/>
+8
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_8'></a>
+</td>
+<td class=''><pre><span  class=''>import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_9'/>
+9
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_9'></a>
+</td>
+<td class=''><pre><span  class=''>import fi.c5.juustofraktaalit.fraktaalit.Tyokalut;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_10'/>
+10
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_10'></a>
+</td>
+<td class=''><pre><span  class=''>import fi.c5.juustofraktaalit.hajauttaja.Hajauttaja;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_11'/>
+11
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_11'></a>
+</td>
+<td class=''><pre><span  class=''>import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_12'/>
+12
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_12'></a>
+</td>
+<td class=''><pre><span  class=''>import fi.c5.juustofraktaalit.hajauttaja.Suorittaja;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_13'/>
+13
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_13'></a>
+</td>
+<td class=''><pre><span  class=''>import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_14'/>
+14
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_14'></a>
+</td>
+<td class=''><pre><span  class=''>import java.awt.image.RenderedImage;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_15'/>
+15
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_15'></a>
+</td>
+<td class=''><pre><span  class=''>import java.io.BufferedReader;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_16'/>
+16
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_16'></a>
+</td>
+<td class=''><pre><span  class=''>import java.io.BufferedWriter;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_17'/>
+17
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_17'></a>
+</td>
+<td class=''><pre><span  class=''>import java.io.File;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_18'/>
+18
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_18'></a>
+</td>
+<td class=''><pre><span  class=''>import java.io.FileNotFoundException;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_19'/>
+19
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_19'></a>
+</td>
+<td class=''><pre><span  class=''>import java.io.FileReader;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_20'/>
+20
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_20'></a>
+</td>
+<td class=''><pre><span  class=''>import java.io.FileWriter;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_21'/>
+21
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_21'></a>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_22'/>
+22
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_22'></a>
+</td>
+<td class=''><pre><span  class=''>import java.util.Scanner;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_23'/>
+23
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_23'></a>
+</td>
+<td class=''><pre><span  class=''>import java.util.logging.Level;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_24'/>
+24
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_24'></a>
+</td>
+<td class=''><pre><span  class=''>import java.util.logging.Logger;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_25'/>
+25
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_25'></a>
+</td>
+<td class=''><pre><span  class=''>import javax.imageio.ImageIO;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_26'/>
+26
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_26'></a>
+</td>
+<td class=''><pre><span  class=''>import javax.swing.JFileChooser;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_27'/>
+27
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_27'></a>
+</td>
+<td class=''><pre><span  class=''>import javax.swing.filechooser.FileNameExtensionFilter;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_28'/>
+28
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_28'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_29'/>
+29
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_29'></a>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_30'/>
+30
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_30'></a>
+</td>
+<td class=''><pre><span  class=''> * K&#228;ytt&#246;liittym&#228;n p&#228;&#228;komponentti</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_31'/>
+31
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_31'></a>
+</td>
+<td class=''><pre><span  class=''> * @author Teemu Heikkil&#228;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_32'/>
+32
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_32'></a>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_33'/>
+33
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_33'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>public class Fraktaaliselain extends javax.swing.JFrame {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_34'/>
+34
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_34'></a>
+</td>
+<td class=''><pre><span  class=''>    Double keskipiste_x;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_35'/>
+35
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_35'></a>
+</td>
+<td class=''><pre><span  class=''>    Double keskipiste_y;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_36'/>
+36
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_36'></a>
+</td>
+<td class=''><pre><span  class=''>    int zoomTaso;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_37'/>
+37
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_37'></a>
+</td>
+<td class=''><pre><span  class=''>    Double zoom;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_38'/>
+38
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_38'></a>
+</td>
+<td class=''><pre><span  class=''>    FileNameExtensionFilter ft_filtteri;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_39'/>
+39
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_39'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_40'/>
+40
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_40'></a>
+</td>
+<td class=''><pre><span  class=''>     * Konstruktori k&#228;ytt&#246;liittym&#228;n p&#228;&#228;komponentille</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_41'/>
+41
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_41'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_42'/>
+42
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_42'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    public Fraktaaliselain() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_43'/>
+43
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_43'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        initComponents();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_44'/>
+44
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_44'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.tila = new Tilanne(this.tilaKentta);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_45'/>
+45
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_45'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tila.asetaTila(&#34;Valmis!&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_46'/>
+46
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_46'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.keskipiste_x = -1.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_47'/>
+47
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_47'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.keskipiste_y = 0.0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_48'/>
+48
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_48'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.zoomTaso = 0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_49'/>
+49
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_49'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.zoom = 1.5;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_50'/>
+50
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_50'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        ft_filtteri = new FileNameExtensionFilter(&#34;FTT fraktaalitallennustiedosto&#34;, &#34;ftt&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_51'/>
+51
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_51'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        paivitaLisatiedot();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_52'/>
+52
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_52'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_53'/>
+53
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_53'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_54'/>
+54
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_54'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_55'/>
+55
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_55'></a>
+</td>
+<td class=''><pre><span  class=''>     * This method is called from within the constructor to initialize the form.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_56'/>
+56
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_56'></a>
+</td>
+<td class=''><pre><span  class=''>     * WARNING: Do NOT modify this code. The content of this method is always</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_57'/>
+57
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_57'></a>
+</td>
+<td class=''><pre><span  class=''>     * regenerated by the Form Editor.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_58'/>
+58
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_58'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_59'/>
+59
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_59'></a>
+</td>
+<td class=''><pre><span  class=''>    @SuppressWarnings(&#34;unchecked&#34;)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_60'/>
+60
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_60'></a>
+</td>
+<td class=''><pre><span  class=''>    // &#60;editor-fold defaultstate=&#34;collapsed&#34; desc=&#34;Generated Code&#34;&#62;//GEN-BEGIN:initComponents</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_61'/>
+61
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_61'></a>
+</td>
+<td class=''><pre><span  class=''>    private void initComponents() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_62'/>
+62
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_62'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_63'/>
+63
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_63'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        asetusPaneeli = new javax.swing.JPanel();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_64'/>
+64
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_64'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        algoritmiOtsikko = new javax.swing.JLabel();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_65'/>
+65
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_65'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        algoritmiValinta = new javax.swing.JComboBox();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_66'/>
+66
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_66'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        hajautusOtsikko = new javax.swing.JLabel();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_67'/>
+67
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_67'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        renderoiNappi = new javax.swing.JButton();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_68'/>
+68
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_68'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        hajautusSlideri = new javax.swing.JSlider();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_69'/>
+69
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_69'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        tilaOtsikko = new javax.swing.JLabel();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_70'/>
+70
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_70'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        tilaKentta = new javax.swing.JTextField();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_71'/>
+71
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_71'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        valitonRenderointiCheckbox = new javax.swing.JCheckBox();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_72'/>
+72
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_72'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        tallennaKuvaNappi = new javax.swing.JButton();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_73'/>
+73
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_73'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        tallennaFraktaaliNappi = new javax.swing.JButton();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_74'/>
+74
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_74'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        avaaFraktaaliNappi = new javax.swing.JButton();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_75'/>
+75
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_75'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        liikuteltavaPaneeli = new javax.swing.JScrollPane();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_76'/>
+76
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_76'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        piirtaja = new fi.c5.juustofraktaalit.kali.Piirtaja();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_77'/>
+77
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_77'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        jToolBar1 = new javax.swing.JToolBar();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_78'/>
+78
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_78'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        keskipisteOtsikko = new javax.swing.JLabel();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_79'/>
+79
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_79'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        jSeparator1 = new javax.swing.JToolBar.Separator();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_80'/>
+80
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_80'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        zoomOtsikko = new javax.swing.JLabel();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_81'/>
+81
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_81'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_82'/>
+82
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_82'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_83'/>
+83
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_83'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        setTitle(&#34;Juustofraktaalit&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_84'/>
+84
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_84'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_85'/>
+85
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_85'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        asetusPaneeli.setBorder(javax.swing.BorderFactory.createTitledBorder(&#34;Asetukset&#34;));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_86'/>
+86
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_86'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_87'/>
+87
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_87'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        algoritmiOtsikko.setText(&#34;Algoritmi&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_88'/>
+88
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_88'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_89'/>
+89
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_89'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        algoritmiValinta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &#34;Mandelbrot&#34;, &#34;Julia&#34; }));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_90'/>
+90
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_90'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_91'/>
+91
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_91'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        hajautusOtsikko.setText(&#34;Hajautus&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_92'/>
+92
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_92'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_93'/>
+93
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_93'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        renderoiNappi.setText(&#34;Render&#246;i&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_94'/>
+94
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_94'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        renderoiNappi.addActionListener(new java.awt.event.ActionListener() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_95'/>
+95
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_95'></a>
+</td>
+<td class=''><pre><span  class=''>            public void actionPerformed(java.awt.event.ActionEvent evt) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_96'/>
+96
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_96'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                renderoiNappiActionPerformed(evt);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_97'/>
+97
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_97'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_98'/>
+98
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_98'></a>
+</td>
+<td class=''><pre><span  class=''>        });</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_99'/>
+99
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_99'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_100'/>
+100
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_100'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        hajautusSlideri.setMaximum(16);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_101'/>
+101
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_101'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        hajautusSlideri.setMinimum(1);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_102'/>
+102
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_102'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        hajautusSlideri.setPaintLabels(true);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_103'/>
+103
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_103'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        hajautusSlideri.setPaintTicks(true);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_104'/>
+104
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_104'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        hajautusSlideri.setSnapToTicks(true);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_105'/>
+105
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_105'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        hajautusSlideri.setValue(2);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_106'/>
+106
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_106'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        hajautusSlideri.addChangeListener(new javax.swing.event.ChangeListener() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_107'/>
+107
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_107'></a>
+</td>
+<td class=''><pre><span  class=''>            public void stateChanged(javax.swing.event.ChangeEvent evt) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_108'/>
+108
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_108'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                hajautusSlideriStateChanged(evt);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_109'/>
+109
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_109'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_110'/>
+110
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_110'></a>
+</td>
+<td class=''><pre><span  class=''>        });</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_111'/>
+111
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_111'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_112'/>
+112
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_112'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tilaOtsikko.setText(&#34;Tila&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_113'/>
+113
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_113'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_114'/>
+114
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_114'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tilaKentta.setEditable(false);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_115'/>
+115
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_115'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tilaKentta.addActionListener(new java.awt.event.ActionListener() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_116'/>
+116
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_116'></a>
+</td>
+<td class=''><pre><span  class=''>            public void actionPerformed(java.awt.event.ActionEvent evt) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_117'/>
+117
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_117'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tilaKenttaActionPerformed(evt);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_118'/>
+118
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_118'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_119'/>
+119
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_119'></a>
+</td>
+<td class=''><pre><span  class=''>        });</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_120'/>
+120
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_120'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_121'/>
+121
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_121'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        valitonRenderointiCheckbox.setText(&#34;V&#228;lit&#246;n render&#246;inti?&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_122'/>
+122
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_122'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        valitonRenderointiCheckbox.setFocusable(false);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_123'/>
+123
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_123'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        valitonRenderointiCheckbox.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_124'/>
+124
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_124'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        valitonRenderointiCheckbox.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_125'/>
+125
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_125'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_126'/>
+126
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_126'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tallennaKuvaNappi.setText(&#34;Tallenna kuva&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_127'/>
+127
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_127'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tallennaKuvaNappi.setActionCommand(&#34;tallennaKuva&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_128'/>
+128
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_128'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tallennaKuvaNappi.addActionListener(new java.awt.event.ActionListener() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_129'/>
+129
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_129'></a>
+</td>
+<td class=''><pre><span  class=''>            public void actionPerformed(java.awt.event.ActionEvent evt) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_130'/>
+130
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_130'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tallennaKuvaNappiActionPerformed(evt);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_131'/>
+131
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_131'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_132'/>
+132
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_132'></a>
+</td>
+<td class=''><pre><span  class=''>        });</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_133'/>
+133
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_133'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_134'/>
+134
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_134'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tallennaFraktaaliNappi.setText(&#34;Tallenna fraktaali&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_135'/>
+135
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_135'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tallennaFraktaaliNappi.addActionListener(new java.awt.event.ActionListener() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_136'/>
+136
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_136'></a>
+</td>
+<td class=''><pre><span  class=''>            public void actionPerformed(java.awt.event.ActionEvent evt) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_137'/>
+137
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_137'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tallennaFraktaaliNappiActionPerformed(evt);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_138'/>
+138
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_138'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_139'/>
+139
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_139'></a>
+</td>
+<td class=''><pre><span  class=''>        });</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_140'/>
+140
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_140'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_141'/>
+141
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_141'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        avaaFraktaaliNappi.setText(&#34;Avaa fraktaali&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_142'/>
+142
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_142'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        avaaFraktaaliNappi.addActionListener(new java.awt.event.ActionListener() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_143'/>
+143
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_143'></a>
+</td>
+<td class=''><pre><span  class=''>            public void actionPerformed(java.awt.event.ActionEvent evt) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_144'/>
+144
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_144'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                avaaFraktaaliNappiActionPerformed(evt);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_145'/>
+145
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_145'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_146'/>
+146
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_146'></a>
+</td>
+<td class=''><pre><span  class=''>        });</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_147'/>
+147
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_147'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_148'/>
+148
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_148'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        javax.swing.GroupLayout asetusPaneeliLayout = new javax.swing.GroupLayout(asetusPaneeli);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_149'/>
+149
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_149'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        asetusPaneeli.setLayout(asetusPaneeliLayout);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_150'/>
+150
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_150'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        asetusPaneeliLayout.setHorizontalGroup(</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_151'/>
+151
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_151'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_152'/>
+152
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_152'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            .addGroup(asetusPaneeliLayout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_153'/>
+153
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_153'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addComponent(algoritmiOtsikko)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_154'/>
+154
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_154'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_155'/>
+155
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_155'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addComponent(algoritmiValinta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_156'/>
+156
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_156'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_157'/>
+157
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_157'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            .addGroup(asetusPaneeliLayout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_158'/>
+158
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_158'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_159'/>
+159
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_159'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addComponent(hajautusOtsikko)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_160'/>
+160
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_160'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addComponent(tilaOtsikko))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_161'/>
+161
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_161'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_162'/>
+162
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_162'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_163'/>
+163
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_163'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addGroup(asetusPaneeliLayout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_164'/>
+164
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_164'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addComponent(hajautusSlideri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_165'/>
+165
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_165'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_166'/>
+166
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_166'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_167'/>
+167
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_167'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                            .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_168'/>
+168
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_168'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                                .addGroup(asetusPaneeliLayout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_169'/>
+169
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_169'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                                    .addComponent(tallennaKuvaNappi)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_170'/>
+170
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_170'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_171'/>
+171
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_171'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                                    .addComponent(tallennaFraktaaliNappi))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_172'/>
+172
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_172'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                                .addGroup(asetusPaneeliLayout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_173'/>
+173
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_173'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                                    .addComponent(avaaFraktaaliNappi)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_174'/>
+174
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_174'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_175'/>
+175
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_175'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                                    .addComponent(renderoiNappi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_176'/>
+176
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_176'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                            .addComponent(valitonRenderointiCheckbox))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_177'/>
+177
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_177'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addGap(47, 47, 47))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_178'/>
+178
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_178'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addGroup(asetusPaneeliLayout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_179'/>
+179
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_179'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addComponent(tilaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_180'/>
+180
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_180'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_181'/>
+181
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_181'></a>
+</td>
+<td class=''><pre><span  class=''>        );</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_182'/>
+182
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_182'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        asetusPaneeliLayout.setVerticalGroup(</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_183'/>
+183
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_183'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_184'/>
+184
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_184'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            .addGroup(asetusPaneeliLayout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_185'/>
+185
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_185'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_186'/>
+186
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_186'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addComponent(algoritmiOtsikko)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_187'/>
+187
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_187'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addComponent(algoritmiValinta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_188'/>
+188
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_188'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addComponent(tallennaKuvaNappi)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_189'/>
+189
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_189'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addComponent(tallennaFraktaaliNappi))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_190'/>
+190
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_190'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_191'/>
+191
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_191'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_192'/>
+192
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_192'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addGroup(asetusPaneeliLayout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_193'/>
+193
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_193'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_194'/>
+194
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_194'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                            .addComponent(avaaFraktaaliNappi)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_195'/>
+195
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_195'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                            .addComponent(renderoiNappi, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_196'/>
+196
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_196'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_197'/>
+197
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_197'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addComponent(valitonRenderointiCheckbox)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_198'/>
+198
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_198'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_199'/>
+199
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_199'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .addGroup(asetusPaneeliLayout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_200'/>
+200
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_200'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_201'/>
+201
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_201'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                            .addComponent(hajautusOtsikko, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_202'/>
+202
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_202'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                            .addComponent(hajautusSlideri, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_203'/>
+203
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_203'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_204'/>
+204
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_204'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addGroup(asetusPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_205'/>
+205
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_205'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                            .addComponent(tilaOtsikko)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_206'/>
+206
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_206'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                            .addComponent(tilaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_207'/>
+207
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_207'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_208'/>
+208
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_208'></a>
+</td>
+<td class=''><pre><span  class=''>        );</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_209'/>
+209
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_209'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_210'/>
+210
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_210'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        piirtaja.addMouseWheelListener(new java.awt.event.MouseWheelListener() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_211'/>
+211
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_211'></a>
+</td>
+<td class=''><pre><span  class=''>            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_212'/>
+212
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_212'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                piirtajaMouseWheelMoved(evt);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_213'/>
+213
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_213'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_214'/>
+214
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_214'></a>
+</td>
+<td class=''><pre><span  class=''>        });</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_215'/>
+215
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_215'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        piirtaja.addMouseListener(new java.awt.event.MouseAdapter() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_216'/>
+216
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_216'></a>
+</td>
+<td class=''><pre><span  class=''>            public void mousePressed(java.awt.event.MouseEvent evt) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_217'/>
+217
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_217'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                piirtajaMousePressed(evt);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_218'/>
+218
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_218'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_219'/>
+219
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_219'></a>
+</td>
+<td class=''><pre><span  class=''>        });</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_220'/>
+220
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_220'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_221'/>
+221
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_221'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        javax.swing.GroupLayout piirtajaLayout = new javax.swing.GroupLayout(piirtaja);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_222'/>
+222
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_222'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        piirtaja.setLayout(piirtajaLayout);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_223'/>
+223
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_223'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        piirtajaLayout.setHorizontalGroup(</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_224'/>
+224
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_224'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            piirtajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_225'/>
+225
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_225'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            .addGap(0, 813, Short.MAX_VALUE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_226'/>
+226
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_226'></a>
+</td>
+<td class=''><pre><span  class=''>        );</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_227'/>
+227
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_227'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        piirtajaLayout.setVerticalGroup(</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_228'/>
+228
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_228'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            piirtajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_229'/>
+229
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_229'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            .addGap(0, 535, Short.MAX_VALUE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_230'/>
+230
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_230'></a>
+</td>
+<td class=''><pre><span  class=''>        );</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_231'/>
+231
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_231'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_232'/>
+232
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_232'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        liikuteltavaPaneeli.setViewportView(piirtaja);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_233'/>
+233
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_233'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_234'/>
+234
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_234'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        jToolBar1.setRollover(true);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_235'/>
+235
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_235'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_236'/>
+236
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_236'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        keskipisteOtsikko.setText(&#34;keskipiste&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_237'/>
+237
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_237'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        jToolBar1.add(keskipisteOtsikko);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_238'/>
+238
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_238'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        jToolBar1.add(jSeparator1);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_239'/>
+239
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_239'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_240'/>
+240
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_240'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        zoomOtsikko.setText(&#34;zoom&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_241'/>
+241
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_241'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        jToolBar1.add(zoomOtsikko);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_242'/>
+242
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_242'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_243'/>
+243
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_243'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_244'/>
+244
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_244'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        getContentPane().setLayout(layout);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_245'/>
+245
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_245'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        layout.setHorizontalGroup(</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_246'/>
+246
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_246'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_247'/>
+247
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_247'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            .addComponent(asetusPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_248'/>
+248
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_248'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            .addComponent(liikuteltavaPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_249'/>
+249
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_249'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_250'/>
+250
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_250'></a>
+</td>
+<td class=''><pre><span  class=''>        );</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_251'/>
+251
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_251'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        layout.setVerticalGroup(</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_252'/>
+252
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_252'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_253'/>
+253
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_253'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_254'/>
+254
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_254'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addComponent(liikuteltavaPaneeli, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_255'/>
+255
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_255'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_256'/>
+256
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_256'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_257'/>
+257
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_257'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_258'/>
+258
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_258'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                .addComponent(asetusPaneeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_259'/>
+259
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_259'></a>
+</td>
+<td class=''><pre><span  class=''>        );</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_260'/>
+260
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_260'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_261'/>
+261
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_261'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        pack();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_262'/>
+262
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_262'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }// &#60;/editor-fold&#62;//GEN-END:initComponents</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_263'/>
+263
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_263'></a>
+</td>
+<td class=''><pre><span  class=''>    private void renderoi(){</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_264'/>
+264
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_264'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tila.asetaTila(&#34;Render&#246;inti aloitettu!&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_265'/>
+265
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_265'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        TyoMaarays t = new TyoMaarays((String)algoritmiValinta.getSelectedItem(), null, new Kuvapinta(this.piirtaja.getWidth(), this.piirtaja.getHeight()), this.hajautusSlideri.getValue());</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_266'/>
+266
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_266'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        t.asetaAlue(keskipiste_x, keskipiste_y, zoom);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_267'/>
+267
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_267'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        Hajauttaja h = new Hajauttaja(t);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_268'/>
+268
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_268'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        Suorittaja v1 = new Suorittaja(h, this.tila, t, this.piirtaja);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_269'/>
+269
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_269'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        v1.execute();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_270'/>
+270
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_270'></a>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_271'/>
+271
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_271'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_272'/>
+272
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_272'></a>
+</td>
+<td class=''><pre><span  class=''>    private void asetaFraktaaliAlgoritmit() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_273'/>
+273
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_273'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        algoritmiValinta.setModel(new javax.swing.DefaultComboBoxModel(FraktaaliTyyppi.haeFraktaaliTyypit()));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_274'/>
+274
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_274'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_275'/>
+275
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_275'></a>
+</td>
+<td class=''><pre><span  class=''>    private void renderoiNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renderoiNappiActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_276'/>
+276
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_276'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        renderoi();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_277'/>
+277
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_277'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }//GEN-LAST:event_renderoiNappiActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_278'/>
+278
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_278'></a>
+</td>
+<td class=''><pre><span  class=''>    private void paivitaLisatiedot(){</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_279'/>
+279
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_279'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        keskipisteOtsikko.setText(&#34;Keskipiste: (&#34;+keskipiste_x+&#34;,&#34;+keskipiste_y+&#34;)&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_280'/>
+280
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_280'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        zoomOtsikko.setText(&#34;Zoom: &#34;+ zoom + &#34; Taso:&#34; + zoomTaso);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_281'/>
+281
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_281'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_282'/>
+282
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_282'></a>
+</td>
+<td class=''><pre><span  class=''>    private void tilaKenttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilaKenttaActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_283'/>
+283
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_283'></a>
+</td>
+<td class=''><pre><span  class=''>        // TODO add your handling code here:</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_284'/>
+284
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_284'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }//GEN-LAST:event_tilaKenttaActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_285'/>
+285
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_285'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_286'/>
+286
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_286'></a>
+</td>
+<td class=''><pre><span  class=''>    private void hajautusSlideriStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_hajautusSlideriStateChanged</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_287'/>
+287
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_287'></a>
+</td>
+<td class=''><pre><span  class=''>        // TODO add your handling code here:</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_288'/>
+288
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_288'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        tila.asetaTila(&#34;Hajautus asetettu arvoon &#34; +hajautusSlideri.getValue()+&#34; -&#62; Render&#246;it&#228;ess&#228; luodaan &#34; + Math.pow(hajautusSlideri.getValue(), 2)+&#34; s&#228;iett&#228;.&#34;);            </span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_289'/>
+289
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_289'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }//GEN-LAST:event_hajautusSlideriStateChanged</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_290'/>
+290
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_290'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_291'/>
+291
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_291'></a>
+</td>
+<td class=''><pre><span  class=''>    private void piirtajaMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_piirtajaMouseWheelMoved</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_292'/>
+292
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_292'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        zoomTaso += evt.getWheelRotation();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_293'/>
+293
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_293'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        paivitaZoom();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_294'/>
+294
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_294'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        paivitaLisatiedot();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_295'/>
+295
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_295'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }//GEN-LAST:event_piirtajaMouseWheelMoved</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_296'/>
+296
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_296'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_297'/>
+297
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_297'></a>
+</td>
+<td class=''><pre><span  class=''>    private void paivitaZoom() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_298'/>
+298
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_298'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        zoomTaso = Math.min(zoomTaso, 0);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_299'/>
+299
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_299'>3</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        zoom = 1.0 / Math.abs(zoomTaso*zoomTaso*zoomTaso);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_300'/>
+300
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_300'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        zoom = Math.min(zoom, 4.0);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_301'/>
+301
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_301'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_302'/>
+302
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_302'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_303'/>
+303
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_303'></a>
+</td>
+<td class=''><pre><span  class=''>    private void piirtajaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_piirtajaMousePressed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_304'/>
+304
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_304'></a>
+</td>
+<td class=''><pre><span  class=''>        // TODO add your handling code here:</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_305'/>
+305
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_305'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        maaritaKeskipiste(evt.getX(), evt.getY());</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_306'/>
+306
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_306'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        paivitaLisatiedot();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_307'/>
+307
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_307'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        if (this.valitonRenderointiCheckbox.isSelected()) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_308'/>
+308
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_308'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            renderoi();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_309'/>
+309
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_309'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_310'/>
+310
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_310'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }//GEN-LAST:event_piirtajaMousePressed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_311'/>
+311
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_311'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_312'/>
+312
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_312'></a>
+</td>
+<td class=''><pre><span  class=''>    private void tallennaKuvaNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tallennaKuvaNappiActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_313'/>
+313
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_313'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        final JFileChooser valitsin = new JFileChooser();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_314'/>
+314
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_314'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        FileNameExtensionFilter filtteri = new FileNameExtensionFilter(&#34;PNG kuvat&#34;, &#34;png&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_315'/>
+315
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_315'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        valitsin.setFileFilter(filtteri);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_316'/>
+316
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_316'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        int palautus = valitsin.showSaveDialog(this);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_317'/>
+317
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_317'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_318'/>
+318
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_318'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        if (palautus == JFileChooser.APPROVE_OPTION) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_319'/>
+319
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_319'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            File t = valitsin.getSelectedFile();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_320'/>
+320
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_320'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            tila.asetaTila(&#34;Tallennetaan fraktaalia kuvatiedostoon...&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_321'/>
+321
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_321'></a>
+</td>
+<td class=''><pre><span  class=''>            try {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_322'/>
+322
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_322'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;ImageIO.write((RenderedImage) this.piirtaja.haeKuva(), &#34;PNG&#34;, t);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_323'/>
+323
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_323'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tila.asetaTila(&#34;Fraktaalin kuva tallennettu.&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_324'/>
+324
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_324'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            } catch (IOException e) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_325'/>
+325
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_325'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tila.asetaTila(&#34;Tiedoston tallentaminen ei onnistunut!&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_326'/>
+326
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_326'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_327'/>
+327
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_327'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_328'/>
+328
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_328'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        } else {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_329'/>
+329
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_329'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            tila.asetaTila(&#34;Kuvaa ei tallennettu!&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_330'/>
+330
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_330'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_331'/>
+331
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_331'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }//GEN-LAST:event_tallennaKuvaNappiActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_332'/>
+332
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_332'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_333'/>
+333
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_333'></a>
+</td>
+<td class=''><pre><span  class=''>    private void tallennaFraktaaliNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tallennaFraktaaliNappiActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_334'/>
+334
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_334'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        final JFileChooser valitsin = new JFileChooser();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_335'/>
+335
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_335'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        valitsin.setFileFilter(ft_filtteri);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_336'/>
+336
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_336'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        int palautus = valitsin.showSaveDialog(this);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_337'/>
+337
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_337'></a>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_338'/>
+338
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_338'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        if (palautus == JFileChooser.APPROVE_OPTION) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_339'/>
+339
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_339'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            File t = valitsin.getSelectedFile();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_340'/>
+340
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_340'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            tila.asetaTila(&#34;Tallennetaan fraktaalia...&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_341'/>
+341
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_341'></a>
+</td>
+<td class=''><pre><span  class=''>            try {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_342'/>
+342
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_342'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;BufferedWriter tallennus = new BufferedWriter(new FileWriter(t));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_343'/>
+343
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_343'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tallennus.write(this.keskipiste_x.toString()+&#34;\n&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_344'/>
+344
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_344'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tallennus.write(this.keskipiste_y.toString()+&#34;\n&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_345'/>
+345
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_345'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tallennus.write(Integer.toString(this.zoomTaso));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_346'/>
+346
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_346'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tallennus.close();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_347'/>
+347
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_347'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            } catch (IOException e) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_348'/>
+348
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_348'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;tila.asetaTila(&#34;Tiedoston tallentaminen ei onnistunut!&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_349'/>
+349
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_349'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_350'/>
+350
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_350'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_351'/>
+351
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_351'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        } else {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_352'/>
+352
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_352'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            tila.asetaTila(&#34;Fraktaalia ei tallennettu!&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_353'/>
+353
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_353'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_354'/>
+354
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_354'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }//GEN-LAST:event_tallennaFraktaaliNappiActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_355'/>
+355
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_355'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_356'/>
+356
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_356'></a>
+</td>
+<td class=''><pre><span  class=''>    private void avaaFraktaaliNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avaaFraktaaliNappiActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_357'/>
+357
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_357'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        final JFileChooser valitsin = new JFileChooser();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_358'/>
+358
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_358'></a>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_359'/>
+359
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_359'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        valitsin.setFileFilter(ft_filtteri);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_360'/>
+360
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_360'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        int palautus = valitsin.showOpenDialog(this);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_361'/>
+361
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_361'></a>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_362'/>
+362
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_362'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        if (palautus == JFileChooser.APPROVE_OPTION) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_363'/>
+363
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_363'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            File t = valitsin.getSelectedFile();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_364'/>
+364
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_364'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            tila.asetaTila(&#34;Avataan fraktaalia...&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_365'/>
+365
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_365'></a>
+</td>
+<td class=''><pre><span  class=''>            try {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_366'/>
+366
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_366'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                BufferedReader lukija = new BufferedReader(new FileReader(t));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_367'/>
+367
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_367'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                keskipiste_x = Double.parseDouble(lukija.readLine());</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_368'/>
+368
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_368'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                keskipiste_y = Double.parseDouble(lukija.readLine());</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_369'/>
+369
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_369'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>                zoomTaso = Integer.parseInt(lukija.readLine());</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_370'/>
+370
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_370'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                paivitaZoom();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_371'/>
+371
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_371'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tila.asetaTila(&#34;Fraktaali ladattu!&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_372'/>
+372
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_372'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                paivitaLisatiedot();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_373'/>
+373
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_373'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            } catch (IOException ex) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_374'/>
+374
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_374'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                tila.asetaTila(&#34;Fraktaalin lataus ep&#228;onnistui!&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_375'/>
+375
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_375'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_376'/>
+376
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_376'></a>
+</td>
+<td class=''><pre><span  class=''>            </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_377'/>
+377
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_377'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_378'/>
+378
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_378'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        } else {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_379'/>
+379
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_379'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            tila.asetaTila(&#34;Fraktaalia ei tallennettu!&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_380'/>
+380
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_380'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_381'/>
+381
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_381'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }//GEN-LAST:event_avaaFraktaaliNappiActionPerformed</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_382'/>
+382
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_382'></a>
+</td>
+<td class=''><pre><span  class=''>    private void maaritaKeskipiste(int uusiPPX, int uusiPPY) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_383'/>
+383
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_383'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        double suhdeX = (double)uusiPPX/(double)this.piirtaja.getWidth();        </span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_384'/>
+384
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_384'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        double suhdeY = (double)uusiPPY/(double)this.piirtaja.getHeight();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_385'/>
+385
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_385'>2</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        keskipiste_x = Tyokalut.map(suhdeX, 0, 1, keskipiste_x-zoom, keskipiste_x+zoom);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_386'/>
+386
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_386'>2</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        keskipiste_y = Tyokalut.map(suhdeY, 0, 1, keskipiste_y-zoom, keskipiste_y+zoom);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_387'/>
+387
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_387'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_388'/>
+388
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_388'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_389'/>
+389
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_389'></a>
+</td>
+<td class=''><pre><span  class=''>    // Variables declaration - do not modify//GEN-BEGIN:variables</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_390'/>
+390
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_390'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JLabel algoritmiOtsikko;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_391'/>
+391
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_391'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JComboBox algoritmiValinta;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_392'/>
+392
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_392'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JPanel asetusPaneeli;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_393'/>
+393
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_393'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JButton avaaFraktaaliNappi;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_394'/>
+394
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_394'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JLabel hajautusOtsikko;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_395'/>
+395
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_395'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JSlider hajautusSlideri;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_396'/>
+396
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_396'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JToolBar.Separator jSeparator1;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_397'/>
+397
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_397'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JToolBar jToolBar1;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_398'/>
+398
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_398'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JLabel keskipisteOtsikko;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_399'/>
+399
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_399'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JScrollPane liikuteltavaPaneeli;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_400'/>
+400
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_400'></a>
+</td>
+<td class=''><pre><span  class=''>    private fi.c5.juustofraktaalit.kali.Piirtaja piirtaja;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_401'/>
+401
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_401'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JButton renderoiNappi;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_402'/>
+402
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_402'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JButton tallennaFraktaaliNappi;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_403'/>
+403
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_403'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JButton tallennaKuvaNappi;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_404'/>
+404
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_404'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JTextField tilaKentta;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_405'/>
+405
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_405'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JLabel tilaOtsikko;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_406'/>
+406
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_406'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JCheckBox valitonRenderointiCheckbox;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_407'/>
+407
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_407'></a>
+</td>
+<td class=''><pre><span  class=''>    private javax.swing.JLabel zoomOtsikko;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_408'/>
+408
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_408'></a>
+</td>
+<td class=''><pre><span  class=''>    // End of variables declaration//GEN-END:variables</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_409'/>
+409
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_409'></a>
+</td>
+<td class=''><pre><span  class=''>    private Tilanne tila;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_410'/>
+410
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_410'></a>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_43'>43</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_43'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::initComponents : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_45'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_51'>51</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_51'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::paivitaLisatiedot : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_82'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::setDefaultCloseOperation : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_83'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::setTitle : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_85'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JPanel::setBorder : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_87'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JLabel::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_89'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JComboBox::setModel : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_91'>91</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_91'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JLabel::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_93'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JButton::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_94'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JButton::addActionListener : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_96'>96</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_96'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::access$000 : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_100'>100</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_100'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JSlider::setMaximum : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_101'>101</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_101'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JSlider::setMinimum : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_102'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JSlider::setPaintLabels : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_103'>103</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_103'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JSlider::setPaintTicks : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_104'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JSlider::setSnapToTicks : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_105'>105</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_105'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JSlider::setValue : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_106'>106</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_106'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JSlider::addChangeListener : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_108'>108</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_108'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::access$100 : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_112'>112</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_112'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JLabel::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_114'>114</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_114'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JTextField::setEditable : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_115'>115</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_115'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JTextField::addActionListener : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_117'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::access$200 : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_121'>121</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_121'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JCheckBox::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_122'>122</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_122'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JCheckBox::setFocusable : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_123'>123</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_123'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JCheckBox::setHorizontalTextPosition : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_124'>124</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_124'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JCheckBox::setVerticalTextPosition : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_126'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JButton::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_127'>127</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_127'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JButton::setActionCommand : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_128'>128</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_128'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JButton::addActionListener : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_130'>130</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_130'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::access$300 : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_134'>134</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_134'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JButton::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_135'>135</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_135'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JButton::addActionListener : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_137'>137</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_137'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::access$400 : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_141'>141</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_141'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JButton::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_142'>142</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_142'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JButton::addActionListener : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_144'>144</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_144'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::access$500 : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_149'>149</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_149'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JPanel::setLayout : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_150'>150</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_150'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/GroupLayout::setHorizontalGroup : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_182'>182</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_182'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/GroupLayout::setVerticalGroup : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_210'>210</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_210'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Piirtaja::addMouseWheelListener : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_212'>212</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_212'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::access$600 : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_215'>215</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_215'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Piirtaja::addMouseListener : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_217'>217</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_217'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::access$700 : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_222'>222</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_222'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Piirtaja::setLayout : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_223'>223</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_223'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/GroupLayout::setHorizontalGroup : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_227'>227</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_227'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/GroupLayout::setVerticalGroup : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_232'>232</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_232'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JScrollPane::setViewportView : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_234'>234</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_234'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JToolBar::setRollover : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_236'>236</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_236'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JLabel::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_240'>240</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_240'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JLabel::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_244'>244</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_244'/> 
+
+<p class='NO_COVERAGE'>removed call to java/awt/Container::setLayout : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_245'>245</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_245'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/GroupLayout::setHorizontalGroup : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_251'>251</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_251'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/GroupLayout::setVerticalGroup : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_261'>261</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_261'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::pack : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_264'>264</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_264'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_266'>266</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_266'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/hajauttaja/TyoMaarays::asetaAlue : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_269'>269</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_269'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/hajauttaja/Suorittaja::execute : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_273'>273</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_273'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JComboBox::setModel : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_276'>276</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_276'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::renderoi : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_279'>279</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_279'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JLabel::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_280'>280</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_280'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JLabel::setText : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_288'>288</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_288'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_292'>292</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_292'/> 
+
+<p class='NO_COVERAGE'>Replaced integer addition with subtraction : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_293'>293</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_293'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::paivitaZoom : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_294'>294</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_294'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::paivitaLisatiedot : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_299'>299</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_299'/> 
+
+<p class='NO_COVERAGE'>Replaced double division with multiplication : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced integer multiplication with division : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced integer multiplication with division : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_305'>305</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_305'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::maaritaKeskipiste : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_306'>306</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_306'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::paivitaLisatiedot : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_307'>307</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_307'/> 
+
+<p class='NO_COVERAGE'>negated conditional : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_308'>308</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_308'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::renderoi : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_315'>315</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_315'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JFileChooser::setFileFilter : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_318'>318</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_318'/> 
+
+<p class='NO_COVERAGE'>negated conditional : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_320'>320</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_320'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_323'>323</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_323'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_325'>325</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_325'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_329'>329</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_329'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_335'>335</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_335'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JFileChooser::setFileFilter : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_338'>338</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_338'/> 
+
+<p class='NO_COVERAGE'>negated conditional : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_340'>340</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_340'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_343'>343</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_343'/> 
+
+<p class='NO_COVERAGE'>removed call to java/io/BufferedWriter::write : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_344'>344</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_344'/> 
+
+<p class='NO_COVERAGE'>removed call to java/io/BufferedWriter::write : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_345'>345</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_345'/> 
+
+<p class='NO_COVERAGE'>removed call to java/io/BufferedWriter::write : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_346'>346</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_346'/> 
+
+<p class='NO_COVERAGE'>removed call to java/io/BufferedWriter::close : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_348'>348</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_348'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_352'>352</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_352'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_359'>359</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_359'/> 
+
+<p class='NO_COVERAGE'>removed call to javax/swing/JFileChooser::setFileFilter : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_362'>362</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_362'/> 
+
+<p class='NO_COVERAGE'>negated conditional : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_364'>364</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_364'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_370'>370</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_370'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::paivitaZoom : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_371'>371</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_371'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_372'>372</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_372'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Fraktaaliselain::paivitaLisatiedot : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_374'>374</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_374'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_379'>379</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_379'/> 
+
+<p class='NO_COVERAGE'>removed call to fi/c5/juustofraktaalit/kali/Tilanne::asetaTila : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_383'>383</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_383'/> 
+
+<p class='NO_COVERAGE'>Replaced double division with multiplication : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_384'>384</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_384'/> 
+
+<p class='NO_COVERAGE'>Replaced double division with multiplication : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_385'>385</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_385'/> 
+
+<p class='NO_COVERAGE'>Replaced double addition with subtraction : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced double subtraction with addition : NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2f1ea80d_386'>386</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2f1ea80d_386'/> 
+
+<p class='NO_COVERAGE'>Replaced double subtraction with addition : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced double addition with subtraction : NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 0.30
+
+</body>
+</html>

@@ -6,6 +6,7 @@
 package fi.c5.juustofraktaalit.hajauttaja;
 
 import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
+import java.lang.reflect.Method;
 import junit.framework.Assert;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -30,5 +31,4 @@ public class HajauttajaTest {
         System.out.println(h.osat[0]);
         Assert.assertTrue(h.osat[0].equals(o));
     }
-    
 }
