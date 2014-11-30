@@ -39,5 +39,12 @@ public class TyokalutTest {
         int edelleenValkoinen = Tyokalut.rgb(252395, 251235, 2132355);
         assertEquals(16777215, edelleenValkoinen);
     }
-    
+    @Test
+    public void testAallonpituusMuunnos() {
+        assertEquals(16760320, Tyokalut.wavelength_to_rgb(600.0, 0.8));
+    }
+    @Test
+    public void testAallonpituusMuunnosNolla() {
+        assertEquals(0, Tyokalut.wavelength_to_rgb(0.0, 0.8));
+    }
 }

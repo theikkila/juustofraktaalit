@@ -15,7 +15,7 @@ import java.awt.image.BufferedImage;
 public class Kuvapinta {
     public int leveys;
     public int korkeus;
-    private BufferedImage kuva;
+    private final BufferedImage kuva;
 
     /**
      * Kuvapinnan konstruktori

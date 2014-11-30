@@ -13,6 +13,16 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
  */
 public class TyoOsa extends Tyo{
     Fraktaali f;
+
+    /**
+     * Konstruktori TyoOsalle
+     * @param fraktaali fraktaalialgoritmi
+     * @param alue alue jolta fraktaali renderöidään
+     * @param pinta kuvapinta johon renderöidyt pikselit tallennetaan
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     */
     public TyoOsa(String fraktaali, Alue alue, Kuvapinta pinta) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         super(fraktaali, alue, pinta);
         Class luokka = Class.forName(FraktaaliTyyppi.haeLuokanNimi(fraktaali));
@@ -33,23 +43,12 @@ public class TyoOsa extends Tyo{
         System.out.println("Työ käynnistetty! "+this.alue+" "+this.pinta);
         int i = 1;
         for (int x = 0; x < this.pinta.leveys; x++) {
-            
-                //System.out.println("Työ edistyy..." + (i/(this.pinta.leveys*this.pinta.korkeus))*100);
-            
             for (int y = 0; y < this.pinta.korkeus; y++) {
                 i++;
                 int vari = this.f.laskeVari(x, y);
                 this.pinta.asetaPikseli(x, y, vari);
             }
         }
-        /*
-        File f = new File(this.alue+".png");
-        try {
-            ImageIO.write(this.pinta.haeKuva(), "PNG", f);
-        } catch (IOException e) {
-            System.out.println("failll");
-        }
-                */
         System.out.println("Työ valmis! "+this.alue+" "+this.pinta);
     }
 }

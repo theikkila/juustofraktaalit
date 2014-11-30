@@ -18,5 +18,6 @@ public class Tilanne {
     }
     public void asetaTila(String tila){
         tilakentta.setText(tila);
+        System.out.println(tila);
     }
 }

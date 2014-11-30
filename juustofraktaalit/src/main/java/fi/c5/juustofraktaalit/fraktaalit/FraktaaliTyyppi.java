@@ -14,6 +14,12 @@ public class FraktaaliTyyppi {
         String[] fraktaalit = {"Mandelbrot", "Julia"}; 
         return fraktaalit;
     }
+
+    /**
+     * Muodostaa luokan koko nimen syöttämällä fraktaalin nimen
+     * @param fraktaali esim "Mandelbrot"
+     * @return luokan koko nimi
+     */
     public static String haeLuokanNimi(String fraktaali) {
         return "fi.c5.juustofraktaalit.fraktaalit."+fraktaali;
     }

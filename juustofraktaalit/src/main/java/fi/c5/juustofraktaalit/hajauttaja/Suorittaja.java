@@ -7,7 +7,6 @@ package fi.c5.juustofraktaalit.hajauttaja;
 
 import fi.c5.juustofraktaalit.kali.Piirtaja;
 import fi.c5.juustofraktaalit.kali.Tilanne;
-import java.awt.List;
 import javax.swing.SwingWorker;
 
 /**
@@ -16,7 +15,7 @@ import javax.swing.SwingWorker;
  */
 
 public class Suorittaja extends SwingWorker<Void, String>{
-    private Hajauttaja h;
+    private final Hajauttaja h;
 
     @Override
     protected void process(java.util.List<String> tilat) {
@@ -24,9 +23,17 @@ public class Suorittaja extends SwingWorker<Void, String>{
             this.t.asetaTila(s);
         }
     }
-    private Tilanne t;
-    private TyoMaarays tm;
-    private Piirtaja piirtaja;
+    private final Tilanne t;
+    private final TyoMaarays tm;
+    private final Piirtaja piirtaja;
+
+    /**
+     * Luo uuden suorittajan. Suorittaja suorittaa käyttöliittymästä erillään hajauttajan vaiheet
+     * @param h Hajauttaja jonka kautta kaikki toiminnot suoritetaan
+     * @param t Tilanne käyttöliittymään tilatietoa päivittävä olio
+     * @param tm TyöMääräys tälle suoritukselle
+     * @param piirtaja Käyttöliittymän objekti johon kuva piirretään
+     */
     public Suorittaja (Hajauttaja h, Tilanne t, TyoMaarays tm, Piirtaja piirtaja) {
         this.h = h;
         this.t = t;

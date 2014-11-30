@@ -23,6 +23,9 @@ public class Hajauttaja{
 
     /**
      * Hajauttaa työmääräyksen työosiin
+     * @throws java.lang.ClassNotFoundException
+     * @throws java.lang.InstantiationException
+     * @throws java.lang.IllegalAccessException
      */
     public void hajauta() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         int hajautus = this.tyo.haeHajautus();
