@@ -5,6 +5,7 @@
  */
 package fi.c5.juustofraktaalit.fraktaalit;
 
+import fi.c5.juustofraktaalit.hajauttaja.Koordinaatti;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -41,10 +42,28 @@ public class TyokalutTest {
     }
     @Test
     public void testAallonpituusMuunnos() {
-        assertEquals(16760320, Tyokalut.wavelength_to_rgb(600.0, 0.8));
+        assertEquals(16760320, Tyokalut.aallonpituus_rgb(600.0, 0.8));
     }
     @Test
     public void testAallonpituusMuunnosNolla() {
-        assertEquals(0, Tyokalut.wavelength_to_rgb(0.0, 0.8));
+        assertEquals(0, Tyokalut.aallonpituus_rgb(0.0, 0.8));
+    }
+    @Test
+    public void testZoom() {
+        assertEquals(2.0, Tyokalut.laskeZoom(0), 0.00000001);
+        assertEquals(2.0, Tyokalut.laskeZoom(1), 0.00000001);
+        assertEquals(2.0, Tyokalut.laskeZoom(4), 0.00000001);
+    }
+    @Test
+    public void testZoomNegatiivinen() {
+        assertEquals(0.125, Tyokalut.laskeZoom(-2), 0.00000001);
+        assertEquals(0.037037037037037035, Tyokalut.laskeZoom(-3), 0.000000001);
+    }
+    @Test
+    public void testKeskipiste() {
+        Koordinaatti<Double> pikseli = new Koordinaatti<>(50.0, 50.0);
+        Koordinaatti<Double> kp = new Koordinaatti<>(0.5, 0.5);
+        Koordinaatti<Double> uusikp = Tyokalut.laskeKeskipiste(pikseli, kp, 0.1, 100, 100);
+        assertEquals(uusikp, new Koordinaatti<Double>(0.5, 0.5));
     }
 }

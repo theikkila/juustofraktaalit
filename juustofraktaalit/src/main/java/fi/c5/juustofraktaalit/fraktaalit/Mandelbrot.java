@@ -21,7 +21,7 @@ public class Mandelbrot extends Fraktaali {
     public Mandelbrot() {
         this.paletti = new int[370];
         for (int i = 0; i < 370; i++) {
-            paletti[i] = Tyokalut.wavelength_to_rgb(i+380, 0.90);
+            paletti[i] = Tyokalut.aallonpituus_rgb(i+380, 0.90);
         }
     }
     @Override
