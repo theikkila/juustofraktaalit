@@ -48,7 +48,11 @@ Viikon työt kärsivät hieman Slushista ja tenteistä.
 
 ## Viikko 6
 
---
+| PVM    | Käytetyt tunnit | Työn kohde                                                  |
+|--------|-----------------|-------------------------------------------------------------|
+| 4.12.  | 1               | Käyttöliittymän parantaminen                                |
+| 4.12.  | 3               | Refaktorointi ja testien kirjoittaminen                     |
+
 
 ## Viikko 7
 
