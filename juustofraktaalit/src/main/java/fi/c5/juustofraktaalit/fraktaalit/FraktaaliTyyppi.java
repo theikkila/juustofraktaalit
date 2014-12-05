@@ -11,7 +11,7 @@ package fi.c5.juustofraktaalit.fraktaalit;
  */
 public class FraktaaliTyyppi {
     public static String[] haeFraktaaliTyypit() {
-        String[] fraktaalit = {"Mandelbrot", "Julia"}; 
+        String[] fraktaalit = {"Mandelbrot", "Hajautustesti"}; 
         return fraktaalit;
     }
 
