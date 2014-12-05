@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Koordinaatit
+ * Koordinaatti-luokka tallentaa x,y-parin
  * @author Teemu Heikkilä
  * @param <K>
  */

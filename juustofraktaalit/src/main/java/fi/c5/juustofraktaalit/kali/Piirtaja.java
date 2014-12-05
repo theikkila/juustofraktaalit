@@ -27,26 +27,17 @@ public class Piirtaja extends JPanel {
     }
 
     public Piirtaja() {
-        /*
-         try {                
-         kuva = ImageIO.read(new File("fraktaali2.png"));
-         Dimension koko = new Dimension(kuva.getWidth(null), kuva.getHeight(null));
-         setPreferredSize(koko);
-         setMinimumSize(koko);
-         setMaximumSize(koko);
-         setSize(koko);
-         setLayout(null);
-         } catch (IOException ex) {
-         // handle exception...
-         }
-         */
+
     }
 
     @Override
     public void paintComponent(Graphics g) {
         g.drawImage(kuva, 0, 0, null);
     }
-
+    /**
+     * Asettaa komponenttiin BufferedImagen
+     * @param kuva asetettava kuva
+     */
     public void asetaKuva(BufferedImage kuva) {
         this.kuva = kuva;
         Dimension koko = new Dimension(kuva.getWidth(null), kuva.getHeight(null));
@@ -57,6 +48,10 @@ public class Piirtaja extends JPanel {
         setLayout(null);
         this.repaint();
     }
+    /**
+     * Palauttaa pinnalle piirretyn kuvan
+     * @return kuva
+     */
     public Image haeKuva(){
         return this.kuva;
     }

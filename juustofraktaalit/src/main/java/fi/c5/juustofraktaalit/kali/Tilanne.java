@@ -16,6 +16,10 @@ public class Tilanne {
     public Tilanne(JTextField tilakentta) {
         this.tilakentta = tilakentta;
     }
+    /**
+     * Asettaa tilan
+     * @param tila uusi tila
+     */
     public void asetaTila(String tila){
         tilakentta.setText(tila);
         System.out.println(tila);

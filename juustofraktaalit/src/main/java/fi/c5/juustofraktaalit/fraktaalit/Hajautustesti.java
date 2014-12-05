@@ -11,6 +11,7 @@ import java.util.Random;
 
 /**
  * Hajautustesti
+ * Visualisoi hajautuksen
  * @author Teemu Heikkilä
  */
 public class Hajautustesti extends Fraktaali{

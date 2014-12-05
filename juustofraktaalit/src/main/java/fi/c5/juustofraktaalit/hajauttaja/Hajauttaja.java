@@ -53,6 +53,9 @@ public class Hajauttaja{
         double b_y = a_y+korkeus;
         return new Alue(a_x, a_y, b_x, b_y);
     }
+    /**
+     * Käynnistää osien renderöinnin
+     */
     public void renderoi() {
         for (TyoOsa osat1 : this.osat) {
             tyot.add(new Thread(osat1));
