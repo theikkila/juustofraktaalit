@@ -5,6 +5,7 @@
  */
 package fi.c5.juustofraktaalit.fraktaalit;
 
+import fi.c5.juustofraktaalit.hajauttaja.Koordinaatti;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -47,7 +48,19 @@ public class Tyokalut {
     public static BigDecimal map(BigDecimal x, BigDecimal in_min, BigDecimal in_max, BigDecimal out_min, BigDecimal out_max) {
         return x.subtract(in_min).multiply(out_max.subtract(out_min)).divide(in_max.subtract(in_min), RoundingMode.HALF_UP).add(out_min);
     }
-
+    public static Koordinaatti<Double> laskeKeskipiste (Koordinaatti<Double> pp, Koordinaatti<Double> keskipiste, double zoom, double leveys, double korkeus) {        
+        double suhdeX = pp.x / leveys;
+        double suhdeY = pp.y / korkeus;
+        keskipiste.x = Tyokalut.map(suhdeX, 0, 1, keskipiste.x - zoom, keskipiste.x + zoom);
+        keskipiste.y = Tyokalut.map(suhdeY, 0, 1, keskipiste.y - zoom, keskipiste.y + zoom);
+        return keskipiste;
+    }
+    public static double laskeZoom(int taso) {
+        taso = Math.min(taso, 0);
+        double zoom = 1.0 / Math.abs(taso * taso * taso);
+        zoom = Math.min(zoom, 2.0);
+        return zoom;
+    }
     /**
      * Muuntaa aallonpituuden nanometreissä RGB-väriksi
      * @param wavelength aallonpituus

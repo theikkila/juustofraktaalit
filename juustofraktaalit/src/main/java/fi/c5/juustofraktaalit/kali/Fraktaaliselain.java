@@ -8,6 +8,7 @@ package fi.c5.juustofraktaalit.kali;
 import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 import fi.c5.juustofraktaalit.fraktaalit.Tyokalut;
 import fi.c5.juustofraktaalit.hajauttaja.Hajauttaja;
+import fi.c5.juustofraktaalit.hajauttaja.Koordinaatti;
 import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 import fi.c5.juustofraktaalit.hajauttaja.Suorittaja;
 import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
@@ -28,14 +29,16 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  * Käyttöliittymän pääkomponentti
+ *
  * @author Teemu Heikkilä
  */
 public class Fraktaaliselain extends javax.swing.JFrame {
+
     Double keskipiste_x;
     Double keskipiste_y;
     int zoomTaso;
     Double zoom;
-    FileNameExtensionFilter ft_filtteri;
+
     /**
      * Konstruktori käyttöliittymän pääkomponentille
      */
@@ -47,7 +50,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
         this.keskipiste_y = 0.0;
         this.zoomTaso = 0;
         this.zoom = 1.5;
-        ft_filtteri = new FileNameExtensionFilter("FTT fraktaalitallennustiedosto", "ftt");
+
         paivitaLisatiedot();
     }
 
@@ -86,7 +89,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
 
         algoritmiOtsikko.setText("Algoritmi");
 
-        algoritmiValinta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mandelbrot", "Julia" }));
+        algoritmiValinta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mandelbrot", "Hajautustesti" }));
 
         hajautusOtsikko.setText("Hajautus");
 
@@ -245,7 +248,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(asetusPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(liikuteltavaPaneeli, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
+            .addComponent(liikuteltavaPaneeli)
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -260,24 +263,25 @@ public class Fraktaaliselain extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void renderoi(){
+    private void renderoi() {
         tila.asetaTila("Renderöinti aloitettu!");
-        TyoMaarays t = new TyoMaarays((String)algoritmiValinta.getSelectedItem(), null, new Kuvapinta(this.piirtaja.getWidth(), this.piirtaja.getHeight()), this.hajautusSlideri.getValue());
+        TyoMaarays t = new TyoMaarays((String) algoritmiValinta.getSelectedItem(), null, new Kuvapinta(this.piirtaja.getWidth(), this.piirtaja.getHeight()), this.hajautusSlideri.getValue());
         t.asetaAlue(keskipiste_x, keskipiste_y, zoom);
         Hajauttaja h = new Hajauttaja(t);
         Suorittaja v1 = new Suorittaja(h, this.tila, t, this.piirtaja);
         v1.execute();
-        
+
     }
+
     private void asetaFraktaaliAlgoritmit() {
         algoritmiValinta.setModel(new javax.swing.DefaultComboBoxModel(FraktaaliTyyppi.haeFraktaaliTyypit()));
     }
     private void renderoiNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renderoiNappiActionPerformed
         renderoi();
     }//GEN-LAST:event_renderoiNappiActionPerformed
-    private void paivitaLisatiedot(){
-        keskipisteOtsikko.setText("Keskipiste: ("+keskipiste_x+","+keskipiste_y+")");
-        zoomOtsikko.setText("Zoom: "+ zoom + " Taso:" + zoomTaso);
+    private void paivitaLisatiedot() {
+        keskipisteOtsikko.setText("Keskipiste: (" + keskipiste_x + "," + keskipiste_y + ")");
+        zoomOtsikko.setText("Zoom: " + zoom + " Taso:" + zoomTaso);
     }
     private void tilaKenttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilaKenttaActionPerformed
         // TODO add your handling code here:
@@ -285,7 +289,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
 
     private void hajautusSlideriStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_hajautusSlideriStateChanged
         // TODO add your handling code here:
-        tila.asetaTila("Hajautus asetettu arvoon " +hajautusSlideri.getValue()+" -> Renderöitäessä luodaan " + Math.pow(hajautusSlideri.getValue(), 2)+" säiettä.");            
+        tila.asetaTila("Hajautus asetettu arvoon " + hajautusSlideri.getValue() + " -> Renderöitäessä luodaan " + Math.pow(hajautusSlideri.getValue(), 2) + " säiettä.");
     }//GEN-LAST:event_hajautusSlideriStateChanged
 
     private void piirtajaMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_piirtajaMouseWheelMoved
@@ -295,11 +299,9 @@ public class Fraktaaliselain extends javax.swing.JFrame {
     }//GEN-LAST:event_piirtajaMouseWheelMoved
 
     private void paivitaZoom() {
-        zoomTaso = Math.min(zoomTaso, 0);
-        zoom = 1.0 / Math.abs(zoomTaso*zoomTaso*zoomTaso);
-        zoom = Math.min(zoom, 4.0);
+        zoom = Tyokalut.laskeZoom(zoomTaso);
     }
-    
+
     private void piirtajaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_piirtajaMousePressed
         // TODO add your handling code here:
         maaritaKeskipiste(evt.getX(), evt.getY());
@@ -310,82 +312,29 @@ public class Fraktaaliselain extends javax.swing.JFrame {
     }//GEN-LAST:event_piirtajaMousePressed
 
     private void tallennaKuvaNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tallennaKuvaNappiActionPerformed
-        final JFileChooser valitsin = new JFileChooser();
-        FileNameExtensionFilter filtteri = new FileNameExtensionFilter("PNG kuvat", "png");
-        valitsin.setFileFilter(filtteri);
-        int palautus = valitsin.showSaveDialog(this);
-
-        if (palautus == JFileChooser.APPROVE_OPTION) {
-            File t = valitsin.getSelectedFile();
-            tila.asetaTila("Tallennetaan fraktaalia kuvatiedostoon...");
-            try {
-		ImageIO.write((RenderedImage) this.piirtaja.haeKuva(), "PNG", t);
-                tila.asetaTila("Fraktaalin kuva tallennettu.");
-            } catch (IOException e) {
-                tila.asetaTila("Tiedoston tallentaminen ei onnistunut!");
-            }
-
-        } else {
-            tila.asetaTila("Kuvaa ei tallennettu!");
-        }
+        Tiedostokasittelija.tallennaPNG(this, tila, piirtaja);
     }//GEN-LAST:event_tallennaKuvaNappiActionPerformed
 
     private void tallennaFraktaaliNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tallennaFraktaaliNappiActionPerformed
-        final JFileChooser valitsin = new JFileChooser();
-        valitsin.setFileFilter(ft_filtteri);
-        int palautus = valitsin.showSaveDialog(this);
-        
-        if (palautus == JFileChooser.APPROVE_OPTION) {
-            File t = valitsin.getSelectedFile();
-            tila.asetaTila("Tallennetaan fraktaalia...");
-            try {
-		BufferedWriter tallennus = new BufferedWriter(new FileWriter(t));
-                tallennus.write(this.keskipiste_x.toString()+"\n");
-                tallennus.write(this.keskipiste_y.toString()+"\n");
-                tallennus.write(Integer.toString(this.zoomTaso));
-                tallennus.close();
-            } catch (IOException e) {
-		tila.asetaTila("Tiedoston tallentaminen ei onnistunut!");
-            }
-
-        } else {
-            tila.asetaTila("Fraktaalia ei tallennettu!");
-        }
+        SelaimenTila t = new SelaimenTila(new Koordinaatti<>(keskipiste_x, keskipiste_y), zoomTaso);
+        Tiedostokasittelija.tallennaFraktaali(this, tila, t);
     }//GEN-LAST:event_tallennaFraktaaliNappiActionPerformed
 
     private void avaaFraktaaliNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avaaFraktaaliNappiActionPerformed
-        final JFileChooser valitsin = new JFileChooser();
-        
-        valitsin.setFileFilter(ft_filtteri);
-        int palautus = valitsin.showOpenDialog(this);
-        
-        if (palautus == JFileChooser.APPROVE_OPTION) {
-            File t = valitsin.getSelectedFile();
-            tila.asetaTila("Avataan fraktaalia...");
-            try {
-                BufferedReader lukija = new BufferedReader(new FileReader(t));
-                keskipiste_x = Double.parseDouble(lukija.readLine());
-                keskipiste_y = Double.parseDouble(lukija.readLine());
-                zoomTaso = Integer.parseInt(lukija.readLine());
-                paivitaZoom();
-                tila.asetaTila("Fraktaali ladattu!");
-                paivitaLisatiedot();
-            } catch (IOException ex) {
-                tila.asetaTila("Fraktaalin lataus epäonnistui!");
-            }
-            
-
-        } else {
-            tila.asetaTila("Fraktaalia ei tallennettu!");
-        }
+        SelaimenTila t = Tiedostokasittelija.avaaFraktaali(this, tila);
+        if (t == null) return;
+        keskipiste_y = t.keskipiste.y;
+        keskipiste_x = t.keskipiste.x;
+        zoomTaso = t.zoom;
+        paivitaZoom();
+        paivitaLisatiedot();
     }//GEN-LAST:event_avaaFraktaaliNappiActionPerformed
     private void maaritaKeskipiste(int uusiPPX, int uusiPPY) {
-        double suhdeX = (double)uusiPPX/(double)this.piirtaja.getWidth();        
-        double suhdeY = (double)uusiPPY/(double)this.piirtaja.getHeight();
-        keskipiste_x = Tyokalut.map(suhdeX, 0, 1, keskipiste_x-zoom, keskipiste_x+zoom);
-        keskipiste_y = Tyokalut.map(suhdeY, 0, 1, keskipiste_y-zoom, keskipiste_y+zoom);
+        Koordinaatti<Double> k = Tyokalut.laskeKeskipiste(new Koordinaatti<>((double)uusiPPX, (double)uusiPPY), new Koordinaatti<>(keskipiste_x, keskipiste_y), zoom, this.piirtaja.getWidth(), this.piirtaja.getHeight());
+        keskipiste_x = k.x;
+        keskipiste_y = k.y;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel algoritmiOtsikko;
     private javax.swing.JComboBox algoritmiValinta;
