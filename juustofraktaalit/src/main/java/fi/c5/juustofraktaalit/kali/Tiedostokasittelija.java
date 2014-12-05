@@ -22,6 +22,8 @@ import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
+ * Sisältää kokoelman staattisia metodeita jotka liittyvät käyttöliittymän
+ * tiedostonkäsittelyyn.
  *
  * @author Teemu Heikkilä
  */
@@ -30,9 +32,9 @@ public class Tiedostokasittelija {
     /**
      * Tallentaa fraktaalin PNG-tiedostoon
      *
-     * @param vanhempi
-     * @param tila
-     * @param piirtaja
+     * @param vanhempi Käyttöliittymä
+     * @param tila Käyttöliittymän tilaolio
+     * @param piirtaja Käyttöliittymän piirto-olio
      */
     public static void tallennaPNG(JFrame vanhempi, Tilanne tila, Piirtaja piirtaja) {
         final JFileChooser valitsin = new JFileChooser();
@@ -54,10 +56,20 @@ public class Tiedostokasittelija {
         }
     }
 
-    public static FileNameExtensionFilter haeFraktaaliFiltteri() {
+    /**
+     * Palauttaa tallennustiedoston tyyppifiltterin
+     */
+    private static FileNameExtensionFilter haeFraktaaliFiltteri() {
         return new FileNameExtensionFilter("FTT fraktaalitallennustiedosto", "ftt");
     }
 
+    /**
+     * Avaa fraktaalin ftt-tiedostosta (juustofraktaaligeneraattorin oma muoto)
+     *
+     * @param vanhempi Käyttöliittymä
+     * @param tila Käyttöliittymän tilaolio
+     * @return Fraktaaliselaimen tila joka on ladattu tiedostosta
+     */
     public static SelaimenTila avaaFraktaali(JFrame vanhempi, Tilanne tila) {
         final JFileChooser valitsin = new JFileChooser();
 
@@ -83,6 +95,14 @@ public class Tiedostokasittelija {
         return null;
     }
 
+    /**
+     * Tallentaa fraktaalin ftt-tiedostoon (juustofraktaaligeneraattorin oma
+     * muoto)
+     *
+     * @param vanhempi Käyttöliittymä
+     * @param tila Käyttöliittymän tilaolio
+     * @param stila Fraktaaliselaimen tila joka on tallennetaan tiedostoon
+     */
     public static void tallennaFraktaali(JFrame vanhempi, Tilanne tila, SelaimenTila stila) {
         final JFileChooser valitsin = new JFileChooser();
         valitsin.setFileFilter(haeFraktaaliFiltteri());
@@ -102,6 +122,17 @@ public class Tiedostokasittelija {
             tila.asetaTila("Fraktaalia ei tallennettu!");
         }
     }
+
+    /**
+     * Avaa ftt-tiedoston ja purkaa SelaimenTila-objektin
+     * (juustofraktaaligeneraattorin oma muoto)
+     *
+     * @param t Avattava tiedosto
+     * @return Fraktaaliselaimen tila joka on ladattu tiedostosta
+     * @throws java.io.FileNotFoundException
+     * @throws java.lang.ClassNotFoundException
+     * @throws java.io.IOException
+     */
     public static SelaimenTila avaaTilaTiedostosta(File t) throws FileNotFoundException, IOException, ClassNotFoundException {
         FileInputStream tiedosto = new FileInputStream(t);
         ObjectInputStream avaaja = new ObjectInputStream(tiedosto);
@@ -110,6 +141,17 @@ public class Tiedostokasittelija {
         tiedosto.close();
         return stila;
     }
+
+    /**
+     * Tallentaa ftt-tiedoston ja serialisoi SelaimenTila-objektin
+     * (juustofraktaaligeneraattorin oma muoto)
+     *
+     * @param t Tallennettava tiedosto
+     * @param stila Fraktaaliselaimen tila joka serialisoidaan ja tallennetaan
+     * tiedostoon
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
+     */
     public static void tallennaTilaTiedostoon(File t, SelaimenTila stila) throws FileNotFoundException, IOException {
         FileOutputStream tiedosto = new FileOutputStream(t);
         ObjectOutputStream tallennin = new ObjectOutputStream(tiedosto);
