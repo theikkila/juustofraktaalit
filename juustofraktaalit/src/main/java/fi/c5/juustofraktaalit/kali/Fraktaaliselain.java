@@ -20,10 +20,21 @@ import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
  * @author Teemu Heikkilä
  */
 public class Fraktaaliselain extends javax.swing.JFrame {
-
+    /**
+     * Näkymän keskipisteen x-koordinaatti
+     */
     Double keskipiste_x;
+    /**
+     * Näkymän keskipisteen y-koordinaatti
+     */
     Double keskipiste_y;
+    /**
+     * Näkymän zoomtaso
+     */
     int zoomTaso;
+    /**
+     * Näkymän zoom
+     */
     Double zoom;
 
     /**
@@ -197,6 +208,11 @@ public class Fraktaaliselain extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
+        piirtaja.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                piirtajaMouseDragged(evt);
+            }
+        });
         piirtaja.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
             public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
                 piirtajaMouseWheelMoved(evt);
@@ -241,7 +257,7 @@ public class Fraktaaliselain extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(liikuteltavaPaneeli, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(liikuteltavaPaneeli)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -316,6 +332,11 @@ public class Fraktaaliselain extends javax.swing.JFrame {
         paivitaZoom();
         paivitaLisatiedot();
     }//GEN-LAST:event_avaaFraktaaliNappiActionPerformed
+
+    private void piirtajaMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_piirtajaMouseDragged
+
+        System.out.println(evt.getX());
+    }//GEN-LAST:event_piirtajaMouseDragged
     private void maaritaKeskipiste(int uusiPPX, int uusiPPY) {
         Koordinaatti<Double> k = Tyokalut.laskeKeskipiste(new Koordinaatti<>((double)uusiPPX, (double)uusiPPY), new Koordinaatti<>(keskipiste_x, keskipiste_y), zoom, this.piirtaja.getWidth(), this.piirtaja.getHeight());
         keskipiste_x = k.x;

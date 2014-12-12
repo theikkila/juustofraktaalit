@@ -14,7 +14,7 @@ import javax.swing.SwingWorker;
  * @author Teemu Heikkilä
  */
 
-public class Suorittaja extends SwingWorker<Void, String>{
+public class Suorittaja extends SwingWorker<Void, String> implements RenderointiTila{
     /**
      * Hajauttaja
      */
@@ -63,6 +63,7 @@ public class Suorittaja extends SwingWorker<Void, String>{
         
         if (!isCancelled()) {
             this.h.renderoi();
+            this.piirtaja.asetaKuva(tm.pinta.haeKuva());
             publish("Fraktaali renderöity. Kootaan tulokset...");
         }
         if (!isCancelled()) {
@@ -75,6 +76,11 @@ public class Suorittaja extends SwingWorker<Void, String>{
     public void done() {
         this.piirtaja.asetaKuva(tm.pinta.haeKuva());
         t.asetaTila("Valmis!");
+    }
+
+    @Override
+    public void osaValmis() {
+        this.piirtaja.asetaKuva(tm.pinta.haeKuva());
     }
     
 }

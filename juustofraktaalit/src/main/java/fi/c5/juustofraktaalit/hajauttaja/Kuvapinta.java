@@ -36,6 +36,15 @@ public class Kuvapinta {
         this.korkeus = korkeus;
         this.kuva = new BufferedImage(leveys, korkeus, BufferedImage.TYPE_INT_RGB);
     }
+    /**
+     * Kuvapinnan konstruktori
+     * @param kuva kuva
+     */
+    public Kuvapinta(BufferedImage kuva) {
+        this.leveys = kuva.getWidth();
+        this.korkeus = kuva.getHeight();
+        this.kuva = kuva;
+    }
 
     /**
      * Asettaa värin pikselille x,y

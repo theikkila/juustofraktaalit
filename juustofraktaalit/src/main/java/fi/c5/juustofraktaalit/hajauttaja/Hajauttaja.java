@@ -6,6 +6,7 @@
 package fi.c5.juustofraktaalit.hajauttaja;
 
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
@@ -17,6 +18,10 @@ public class Hajauttaja{
     *  Alkuperäinen työmääräys joka hajautetaan
     */
     private final TyoMaarays tyo;
+    /**
+    * Renderöinnin tila välitetään tämän avulla
+    */
+    private RenderointiTila t;
     /**
      * Hajautetut työn osat
      */
@@ -45,12 +50,15 @@ public class Hajauttaja{
         int tyomaara = hajautus * hajautus; // Työ pilkotaan osiin ja osien lukumäärä on hajautus^2
         // Alustetaan taulukko työn osille
         this.osat = new TyoOsa[tyomaara];
+        int leveys = this.tyo.pinta.leveys/hajautus;
+        int korkeus = this.tyo.pinta.korkeus/hajautus;
         Kuvapinta k = this.tyo.pinta;
         for (int i = 0; i < tyomaara; i++) {
             int x = (i % hajautus);
             int y = (i / hajautus);
             Alue a = haeAlue(x, y);
-            Kuvapinta kp = new Kuvapinta(k.leveys/hajautus, k.korkeus/hajautus);
+            BufferedImage kuva = tyo.pinta.haeKuva().getSubimage(x*leveys, y*korkeus, k.leveys/hajautus, k.korkeus/hajautus);
+            Kuvapinta kp = new Kuvapinta(kuva);
             osat[i] = new TyoOsa(this.tyo.haeTyyppi(), a, kp);
         }
     }
@@ -75,10 +83,21 @@ public class Hajauttaja{
             tyot.get(tyot.size()-1).start();
         }
         System.out.println("Odotetaan osien valmistumista!");
+        int mvalmiit = 0;
         while(true) {
             boolean valmis = true;
+            int valmiit = 0;
             for (Thread t : this.tyot) {
                 valmis = valmis && !t.isAlive();
+                if (!t.isAlive()) {
+                    valmiit++;
+                }
+            }
+            if (mvalmiit < valmiit) {
+                mvalmiit = valmiit;
+                if (this.t != null) {
+                 t.osaValmis();   
+                }
             }
             if (valmis) {
                 System.out.println("Kaikki osat valmiina!");
@@ -91,19 +110,14 @@ public class Hajauttaja{
      * Kokoaa työn osat yhdelle kuvapinnalle
      */
     public void kokoa(){
-        System.out.println("Kootaan kuvaa...");
-        int hajautus = this.tyo.haeHajautus();
-        int leveys = this.tyo.pinta.leveys/hajautus;
-        int korkeus = this.tyo.pinta.korkeus/hajautus;
-        
-        for (int i = 0; i < this.osat.length; i++) {
-            System.out.println("Kootaan osaa " + i);
-            int x = (i % hajautus) * leveys;
-            int y = (i / hajautus) * korkeus;
-            System.out.println(x+":"+y);
-            this.tyo.pinta.asetaOsa(x, y, this.osat[i].haePinta());
-        }
         System.out.println("Kokoaminen valmis!");
+    }
+    /**
+     * Tämä asettaa renderöinnin tilan seuraamiseen tarkoitetun kahvan
+     * @param t 
+     */
+    public void asetaTilaKahva(RenderointiTila t) {
+     this.t = t;   
     }
     
     private int indeksi(int x, int y) {
