@@ -17,7 +17,7 @@ import java.util.Random;
 public class Hajautustesti extends Fraktaali{
     private int vari = 0;
     public void asetaAlueet(Alue alue, Alue kuvapinta) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Tämä toiminto ei ole tuettu tässä algoritmissa."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Hajautustesti extends Fraktaali{
 
     @Override
     public void asetaAlueet(Alue alue, Kuvapinta kuvapinta) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // Generoidaan kaunis väri :)
         Random r = new Random();
         vari = Tyokalut.rgb(r.nextInt(255), r.nextInt(255), r.nextInt(255));
     }

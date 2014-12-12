@@ -12,20 +12,7 @@ import fi.c5.juustofraktaalit.hajauttaja.Koordinaatti;
 import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
 import fi.c5.juustofraktaalit.hajauttaja.Suorittaja;
 import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
-import java.awt.image.RenderedImage;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 /**
  * Käyttöliittymän pääkomponentti
@@ -355,5 +342,5 @@ public class Fraktaaliselain extends javax.swing.JFrame {
     private javax.swing.JCheckBox valitonRenderointiCheckbox;
     private javax.swing.JLabel zoomOtsikko;
     // End of variables declaration//GEN-END:variables
-    private Tilanne tila;
+    private final Tilanne tila;
 }

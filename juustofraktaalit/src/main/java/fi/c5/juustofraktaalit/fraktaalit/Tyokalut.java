@@ -6,8 +6,7 @@
 package fi.c5.juustofraktaalit.fraktaalit;
 
 import fi.c5.juustofraktaalit.hajauttaja.Koordinaatti;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+
 
 /**
  * Työkalut on kokoelma staattisia työkalumetodeja

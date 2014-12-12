@@ -5,7 +5,6 @@
  */
 package fi.c5.juustofraktaalit.hajauttaja;
 
-import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
 
 /**
  * Työmääräys kuvaa renderöintityötä ennen hajautusta
@@ -58,6 +57,6 @@ public class TyoMaarays extends Tyo{
     
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Ei tuettu tässä luokassa"); //To change body of generated methods, choose Tools | Templates.
     }
 }
