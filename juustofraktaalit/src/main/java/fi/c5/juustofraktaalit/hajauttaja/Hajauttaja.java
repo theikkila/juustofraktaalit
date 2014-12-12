@@ -13,9 +13,22 @@ import java.util.ArrayList;
  * @author Teemu Heikkilä
  */
 public class Hajauttaja{
+    /**
+    *  Alkuperäinen työmääräys joka hajautetaan
+    */
     private final TyoMaarays tyo;
+    /**
+     * Hajautetut työn osat
+     */
     public TyoOsa[] osat;
+    /**
+     * Hajautettujen töiden säielista
+     */
     public ArrayList<Thread> tyot;
+     /**
+     * Hajauttajan konstruktori
+     * @param fraktaalityo on koko renderöitävän fraktaalin sisältävä tietorakenne
+     */
     public Hajauttaja (TyoMaarays fraktaalityo) {
         this.tyo = fraktaalityo;
         this.tyot = new ArrayList<>();

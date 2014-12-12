@@ -12,6 +12,9 @@ import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
  * @author Teemu Heikkilä
  */
 public class TyoOsa extends Tyo{
+    /**
+     * Fraktaalialgoritmi
+     */
     Fraktaali f;
 
     /**

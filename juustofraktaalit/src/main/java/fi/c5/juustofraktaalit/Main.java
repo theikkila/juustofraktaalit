@@ -5,19 +5,12 @@
  */
 package fi.c5.juustofraktaalit;
 
-import fi.c5.juustofraktaalit.fraktaalit.FraktaaliTyyppi;
-import fi.c5.juustofraktaalit.hajauttaja.Alue;
-import fi.c5.juustofraktaalit.hajauttaja.Hajauttaja;
-import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
-import fi.c5.juustofraktaalit.hajauttaja.TyoMaarays;
+
 import fi.c5.juustofraktaalit.kali.Fraktaaliselain;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.SwingUtilities;
+
 
 /**
- *
+ * Pääluokka
  * @author Teemu Heikkilä
  */
 public class Main {

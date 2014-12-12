@@ -13,9 +13,17 @@ import fi.c5.juustofraktaalit.hajauttaja.Kuvapinta;
  * @author Teemu Heikkilä
  */
 public class Mandelbrot extends Fraktaali {
-
+    /**
+     * Väripaletti jota käytetään Mandelbrot-algoritmissa
+     */
     private int[] paletti;
+    /**
+     * Alue jolta fraktaali renderöidään
+     */
     private Alue alue;
+    /**
+     * Kuvapinta johon renderöinti toteutetaan.
+     */
     private Kuvapinta kuvapinta;
 
     public Mandelbrot() {

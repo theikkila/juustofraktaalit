@@ -12,6 +12,9 @@ import javax.swing.JTextField;
  * @author Teemu Heikkilä
  */
 public class Tilanne {
+    /**
+     * Käyttöliittymäkomponentti, passiivinen tekstikenttä.
+     */
     JTextField tilakentta;
     public Tilanne(JTextField tilakentta) {
         this.tilakentta = tilakentta;

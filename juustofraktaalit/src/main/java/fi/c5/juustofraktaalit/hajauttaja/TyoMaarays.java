@@ -11,6 +11,9 @@ package fi.c5.juustofraktaalit.hajauttaja;
  * @author Teemu Heikkilä
  */
 public class TyoMaarays extends Tyo{
+    /**
+     * Kuinka moneen osaan työ hajautetaan
+     */
     private int hajautus;
 
     public TyoMaarays(String fraktaali, Alue alue, Kuvapinta pinta) {

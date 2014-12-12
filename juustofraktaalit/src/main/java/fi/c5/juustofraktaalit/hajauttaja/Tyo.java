@@ -12,6 +12,9 @@ import java.util.Objects;
  * @author Teemu Heikkilä
  */
 public abstract class Tyo implements Runnable {
+    /**
+     * Fraktaalialgoritmin nimi
+     */
     private final String fraktaali;
 
     /**

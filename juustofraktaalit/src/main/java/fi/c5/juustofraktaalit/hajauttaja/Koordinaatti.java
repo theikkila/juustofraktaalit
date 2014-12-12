@@ -14,21 +14,48 @@ import java.util.Objects;
  * @param <K>
  */
 public class Koordinaatti<K> implements Serializable{
+    /**
+     * X-koordinaatti
+     */
     public K x;
+    /**
+     * Y-koordinaatti
+     */
     public K y;
+    /**
+     * Koordinaatti-luokan konstruktori
+     * @param x x-koordinaatti
+     * @param y y-koordinaatti
+     */
     public Koordinaatti (K x, K y) {
         this.x = x;
         this.y = y;
     }
+    /**
+     * Palauttaa X-koordinaatin
+     * @return x-koordinaatti
+     */
     public K haeX() {
         return x;
     }
+    /**
+     * Palauttaa Y-koordinaatin
+     * @return y-koordinaatti
+     */
     public K haeY() {
         return y;
     }
+     /**
+     * Asettaa X-koordinaatin
+     * @param x asetettava x-koordinaatti
+     */
     public void asetaX(K x) {
         this.x = x;
     }
+     /**
+     * Asettaa Y-koordinaatin
+     * @param y asetettava y-koordinaatti
+     */
     public void asetaY(K y) {
         this.y = y;
     }

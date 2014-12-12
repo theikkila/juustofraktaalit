@@ -13,8 +13,17 @@ import java.awt.image.BufferedImage;
  * @author Teemu Heikkilä
  */
 public class Kuvapinta {
+    /**
+     * Kuvapinnan leveys pikseleinä
+     */
     public int leveys;
+    /**
+     * Kuvapinnan korkeus pikseleinä
+     */
     public int korkeus;
+    /**
+     * Kuvapinta
+     */
     private final BufferedImage kuva;
 
     /**

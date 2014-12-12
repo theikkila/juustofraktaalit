@@ -15,6 +15,9 @@ import java.util.Random;
  * @author Teemu Heikkilä
  */
 public class Hajautustesti extends Fraktaali{
+    /**
+     * Palasen väri kokonaislukuun pakattuna.
+     */
     private int vari = 0;
     public void asetaAlueet(Alue alue, Alue kuvapinta) {
         throw new UnsupportedOperationException("Tämä toiminto ei ole tuettu tässä algoritmissa."); //To change body of generated methods, choose Tools | Templates.

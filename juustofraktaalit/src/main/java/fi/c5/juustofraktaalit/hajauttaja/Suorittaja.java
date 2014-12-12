@@ -15,6 +15,9 @@ import javax.swing.SwingWorker;
  */
 
 public class Suorittaja extends SwingWorker<Void, String>{
+    /**
+     * Hajauttaja
+     */
     private final Hajauttaja h;
 
     @Override
@@ -23,8 +26,17 @@ public class Suorittaja extends SwingWorker<Void, String>{
             this.t.asetaTila(s);
         }
     }
+    /**
+     * Tilanne-olio käyttöliittymästä
+     */
     private final Tilanne t;
+    /**
+     * Alkuperäinen työmääräys
+     */
     private final TyoMaarays tm;
+    /**
+     * Käyttöliittymän elementti johon piirretään
+     */
     private final Piirtaja piirtaja;
 
     /**
