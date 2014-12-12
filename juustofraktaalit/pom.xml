@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.c5</groupId>
     <artifactId>juustofraktaalit</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -35,10 +35,8 @@
                 <configuration>
                     <instrumentation>
                         <includes>
-                            <include>fi.c5.juustofraktaalit.fraktaalit/*.class</include>
-                            <include>fi.c5.juustofraktaalit.hajauttaja/*.class</include>
-                            <include>fi.c5.juustofraktaalit.kali/SelaimenTila.class</include>
-                            <include>fi.c5.juustofraktaalit.kali/Tiedostokasittelija.class</include>
+                            <include>fi/c5/juustofraktaalit/fraktaalit/*.class</include>
+                            <include>fi/c5/juustofraktaalit/hajauttaja/*.class</include>
                         </includes>
                     </instrumentation>
                 </configuration>
@@ -52,8 +50,6 @@
                     <targetClasses>
                         <param>fi.c5.juustofraktaalit.fraktaalit*</param>
                         <param>fi.c5.juustofraktaalit.hajauttaja*</param>
-                        <param>fi.c5.juustofraktaalit.kali.SelaimenTila</param>
-                        <param>fi.c5.juustofraktaalit.kali.Tiedostokasittelija</param>
                     </targetClasses>
                     <targetTests>
                         <param>fi.c5.juustofraktaalit*</param>

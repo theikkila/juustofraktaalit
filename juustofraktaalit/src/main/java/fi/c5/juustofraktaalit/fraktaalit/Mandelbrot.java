@@ -57,7 +57,7 @@ public class Mandelbrot extends Fraktaali {
     /**
      * Asettaa fraktaalin piirtoon tarvittavan väripaletin
      *
-     * @param paletti
+     * @param paletti väripaletti
      */
     public void asetaVaripaletti(int[] paletti) {
         this.paletti = paletti;

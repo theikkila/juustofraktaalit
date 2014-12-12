@@ -22,11 +22,11 @@ public class TyoMaarays extends Tyo{
     }
 
     /**
-     *
-     * @param fraktaali
-     * @param alue
-     * @param pinta
-     * @param hajautus
+     * Työmääräykäysen konstruktori
+     * @param fraktaali fraktaalialgoritmin nimi
+     * @param alue alue jolle työmääräys kohdistetaan
+     * @param pinta kuvapinta jolle työmääräys kohdistetaan
+     * @param hajautus kuinka moneen osaan alue hajautetaan.
      */
     public TyoMaarays(String fraktaali, Alue alue, Kuvapinta pinta,  int hajautus) {
         super(fraktaali, alue, pinta);

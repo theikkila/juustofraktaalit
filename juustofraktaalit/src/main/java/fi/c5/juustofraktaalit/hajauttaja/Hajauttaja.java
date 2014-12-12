@@ -114,7 +114,7 @@ public class Hajauttaja{
     }
     /**
      * Tämä asettaa renderöinnin tilan seuraamiseen tarkoitetun kahvan
-     * @param t 
+     * @param t kahva
      */
     public void asetaTilaKahva(RenderointiTila t) {
      this.t = t;   

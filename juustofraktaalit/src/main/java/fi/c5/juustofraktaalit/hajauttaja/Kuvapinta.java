@@ -48,9 +48,9 @@ public class Kuvapinta {
 
     /**
      * Asettaa värin pikselille x,y
-     * @param x
-     * @param y
-     * @param vari
+     * @param x asetettavan pikselin x-koordinaatti
+     * @param y asetettavan pikselin y-koordinatti
+     * @param vari väri
      */
     public void asetaPikseli(int x, int y, int vari) {
         this.kuva.setRGB(x, y, vari);

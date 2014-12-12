@@ -64,8 +64,8 @@ public class Alue {
     
     /**
      * Konstruktori joka alustaa alueen alkamaan origosta
-     * @param leveys
-     * @param korkeus
+     * @param leveys alueen leveys
+     * @param korkeus alueen korkeus
      */
     public Alue(Double leveys, Double korkeus) {
         this.x1 = new Double(0);
@@ -75,8 +75,8 @@ public class Alue {
     }
      /**
      * Konstruktori joka alustaa alueen alkamaan origosta (int)
-     * @param leveys
-     * @param korkeus
+     * @param leveys alueen leveys
+     * @param korkeus alueen korkeus
      */
     public Alue(int leveys, int korkeus) {
         this.x1 = new Double(0);

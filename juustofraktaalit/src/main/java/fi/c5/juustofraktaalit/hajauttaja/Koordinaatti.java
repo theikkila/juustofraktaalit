@@ -11,7 +11,7 @@ import java.util.Objects;
 /**
  * Koordinaatti-luokka tallentaa x,y-parin
  * @author Teemu Heikkilä
- * @param <K>
+ * @param <K> x ja y-koordinaattien muuttujatyyppi
  */
 public class Koordinaatti<K> implements Serializable{
     /**
